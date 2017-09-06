@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5AEFCB2BCD92980AA3B6461339E1FA0F4F674C8D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5AEFCB2BCD92980AA3B6461339E1FA0F4F674C8D" : 9223372036854775807,
+    "311D1CC51E7D9BA61DBC624261AFD4AC3DE3D585" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2FEDA0DE-04F2-49AA-8D8D-A9EDB3ABF894",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5AEFCB2BCD92980AA3B6461339E1FA0F4F674C8D" : "KEEP\/",
+    "311D1CC51E7D9BA61DBC624261AFD4AC3DE3D585" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KEEP",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "KEEP\/KEEP.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ryudonghun78\/Intern_Project.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "311D1CC51E7D9BA61DBC624261AFD4AC3DE3D585"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ryudonghun78\/KEEP.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5AEFCB2BCD92980AA3B6461339E1FA0F4F674C8D"
+    }
+  ]
+}
