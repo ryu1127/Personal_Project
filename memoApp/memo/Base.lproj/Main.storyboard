@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" customClass="MapViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rjy-FZ-gkd">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93G-hu-qWM">
+                                <rect key="frame" x="280" y="40" width="75" height="74"/>
+                                <state key="normal" image="locationicon1-2"/>
+                                <connections>
+                                    <action selector="tapTrackButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="L9Z-hR-uPT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvf-5B-UvQ">
+                                <rect key="frame" x="51" y="505" width="272" height="112"/>
+                                <state key="normal" image="recordicon-4"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="93G-hu-qWM" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="20" id="2EG-qY-Gkc"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="rjy-FZ-gkd" secondAttribute="trailing" id="3dW-gM-u2E"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="rjy-FZ-gkd" secondAttribute="bottom" id="9ID-d3-o9O"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="rjy-FZ-gkd" secondAttribute="bottom" id="Itd-GA-CiA"/>
+                            <constraint firstItem="rjy-FZ-gkd" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="Ldq-La-NQA"/>
+                            <constraint firstItem="rvf-5B-UvQ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="WPf-VF-igN"/>
+                            <constraint firstItem="rjy-FZ-gkd" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="eAR-6T-xC0"/>
+                            <constraint firstItem="rjy-FZ-gkd" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="jFM-2Z-hgL"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="93G-hu-qWM" secondAttribute="trailing" constant="20" id="jLv-sY-AyL"/>
+                            <constraint firstAttribute="bottom" secondItem="rvf-5B-UvQ" secondAttribute="bottom" constant="50" id="kyJ-Ac-CHD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="mapicon-2" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="memoMap" destination="rjy-FZ-gkd" id="y8K-6G-a3E"/>
+                        <outlet property="trackingButton" destination="93G-hu-qWM" id="DAl-fa-QLX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fw6-wy-YLF">
+            <objects>
+                <viewController id="dwH-Dd-IIL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vtF-4k-bGc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="EkF-Q5-6H8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYg-2P-VZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1455" y="-317"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="wg7-f3-ORb">
+            <objects>
+                <viewController id="8rJ-Kc-sve" customClass="HistoryViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="History View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
+                                <rect key="frame" x="91" y="312" width="193.5" height="43"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by HistoryViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
+                                <rect key="frame" x="81.5" y="363" width="212.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
+                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
+                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
+                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="History" image="historyicon-2" id="cPa-gy-q4n"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Friends-->
+        <scene sceneID="RPj-ME-h3s">
+            <objects>
+                <viewController id="rJI-4h-Ajx" customClass="FriendsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qvu-NY-Zqa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="ZV1-U2-mOA"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Friends" image="friendsicon-2" id="ZcT-Oo-mil"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zzR-NJ-UQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1078"/>
+        </scene>
+        <!--settings-->
+        <scene sceneID="Uo4-P3-r0l">
+            <objects>
+                <viewController id="87u-7G-gPb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oSQ-Cb-EZ6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="8DJ-7l-mXI"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="settings" image="settingsicon-2" id="klQ-FM-tcI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Chf-U6-vpn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1756"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="rJI-4h-Ajx" kind="relationship" relationship="viewControllers" id="jJW-2t-hvx"/>
+                        <segue destination="87u-7G-gPb" kind="relationship" relationship="viewControllers" id="9Zo-Dv-XlD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="friendsicon-2" width="30" height="29"/>
+        <image name="historyicon-2" width="30" height="29"/>
+        <image name="locationicon1-2" width="75" height="74"/>
+        <image name="mapicon-2" width="30" height="29"/>
+        <image name="recordicon-4" width="272" height="112"/>
+        <image name="settingsicon-2" width="30" height="29"/>
+    </resources>
+</document>
