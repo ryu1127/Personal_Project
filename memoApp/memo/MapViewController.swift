@@ -11,6 +11,7 @@ import CoreLocation
 import MapKit
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+
     @IBOutlet weak var memoMap: MKMapView!
     @IBOutlet weak var trackingButton: UIButton!
     var locationManager = CLLocationManager()
@@ -41,15 +42,5 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func gotoSpot(_ sender: Any) {
-        let latitude = 48.8585419
-        let longitude = 2.2940111
-        let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let span = MKCoordinateSpan(latitudeDelta : 0.02, longitudeDelta : 0.02)
-        let theRegion = MKCoordinateRegion(center: center, span: span)
-        memoMap.setRegion(theRegion, animated:true)
-    }
-
-
 }
 

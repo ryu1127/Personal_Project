@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Map-->
         <scene sceneID="hNz-n2-bh7">
@@ -28,23 +33,27 @@
                                     <action selector="tapTrackButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="L9Z-hR-uPT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvf-5B-UvQ">
-                                <rect key="frame" x="51" y="505" width="272" height="112"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7W-x2-6u3">
+                                <rect key="frame" x="51" y="491" width="272" height="112"/>
                                 <state key="normal" image="recordicon-4"/>
+                                <connections>
+                                    <action selector="recordButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="HUz-c0-jL5"/>
+                                    <segue destination="dwH-Dd-IIL" kind="show" id="LYc-Jv-KK3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="93G-hu-qWM" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="20" id="2EG-qY-Gkc"/>
+                            <constraint firstItem="n7W-x2-6u3" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="3UA-SJ-Hlo"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="rjy-FZ-gkd" secondAttribute="trailing" id="3dW-gM-u2E"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="rjy-FZ-gkd" secondAttribute="bottom" id="9ID-d3-o9O"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="rjy-FZ-gkd" secondAttribute="bottom" id="Itd-GA-CiA"/>
                             <constraint firstItem="rjy-FZ-gkd" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="Ldq-La-NQA"/>
-                            <constraint firstItem="rvf-5B-UvQ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="WPf-VF-igN"/>
                             <constraint firstItem="rjy-FZ-gkd" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="eAR-6T-xC0"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="n7W-x2-6u3" secondAttribute="bottom" constant="15" id="iS3-I4-sRw"/>
                             <constraint firstItem="rjy-FZ-gkd" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="jFM-2Z-hgL"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="93G-hu-qWM" secondAttribute="trailing" constant="20" id="jLv-sY-AyL"/>
-                            <constraint firstAttribute="bottom" secondItem="rvf-5B-UvQ" secondAttribute="bottom" constant="50" id="kyJ-Ac-CHD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -58,14 +67,30 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--View Controller-->
+        <!--Record View Controller-->
         <scene sceneID="fw6-wy-YLF">
             <objects>
-                <viewController id="dwH-Dd-IIL" sceneMemberID="viewController">
+                <viewController id="dwH-Dd-IIL" customClass="RecordViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vtF-4k-bGc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBy-7m-4my">
+                                <rect key="frame" x="165.5" y="565" width="44" height="42"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <state key="normal" title="취소">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="show" id="L9B-LQ-4UY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EkF-Q5-6H8" firstAttribute="bottom" secondItem="xBy-7m-4my" secondAttribute="bottom" constant="60" id="6aL-YZ-R3U"/>
+                            <constraint firstItem="xBy-7m-4my" firstAttribute="centerX" secondItem="vtF-4k-bGc" secondAttribute="centerX" id="bxO-j0-p8s"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EkF-Q5-6H8"/>
                     </view>
                 </viewController>
