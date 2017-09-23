@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,10 +37,23 @@
                                 <rect key="frame" x="51" y="491" width="272" height="112"/>
                                 <state key="normal" image="recordicon-4"/>
                                 <connections>
-                                    <action selector="recordButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="HUz-c0-jL5"/>
-                                    <segue destination="dwH-Dd-IIL" kind="show" id="LYc-Jv-KK3"/>
+                                    <segue destination="dwH-Dd-IIL" kind="show" id="XHB-4N-rBT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJZ-yW-OBB">
+                                <rect key="frame" x="220" y="389" width="135" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="so3-cn-Ics">
+                                <rect key="frame" x="220" y="434" width="139" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -59,6 +72,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="mapicon-2" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="latitude" destination="GJZ-yW-OBB" id="Iek-9m-vrp"/>
+                        <outlet property="longitude" destination="so3-cn-Ics" id="T1m-Oy-Mmt"/>
                         <outlet property="memoMap" destination="rjy-FZ-gkd" id="y8K-6G-a3E"/>
                         <outlet property="trackingButton" destination="93G-hu-qWM" id="DAl-fa-QLX"/>
                     </connections>
@@ -85,6 +100,24 @@
                                     <segue destination="49e-Tb-3d3" kind="show" id="L9B-LQ-4UY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcz-SG-Z1R">
+                                <rect key="frame" x="94" y="97" width="187" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <state key="normal" title="카메라"/>
+                                <connections>
+                                    <segue destination="aRh-Q7-GRh" kind="show" id="Oqo-Xw-cGt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXH-Fh-eUL">
+                                <rect key="frame" x="94" y="304" width="187" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <state key="normal" title="앨범"/>
+                                <connections>
+                                    <segue destination="4ks-yD-L5A" kind="show" id="xye-Lm-MUH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -96,7 +129,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYg-2P-VZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1455" y="-317"/>
+            <point key="canvasLocation" x="1453.5999999999999" y="-317.09145427286359"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JNl-6h-YRc">
+            <objects>
+                <viewController id="4ks-yD-L5A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f82-wo-5Mt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="VOe-5c-hOi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fya-3M-oo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2327" y="108"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="Jpm-Fv-gF6">
+            <objects>
+                <viewController id="aRh-Q7-GRh" customClass="CameraViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MXf-C7-JJt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pv0-Xr-dq7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnu-Fx-JGn">
+                                <rect key="frame" x="113" y="549" width="149" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <state key="normal" title="촬영"/>
+                                <connections>
+                                    <action selector="pushBtn:" destination="aRh-Q7-GRh" eventType="touchUpInside" id="QDw-ft-p8e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt1-rk-M7I">
+                                <rect key="frame" x="16" y="581" width="69" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="&lt;"/>
+                                <connections>
+                                    <segue destination="dwH-Dd-IIL" kind="show" id="6OZ-S2-yXN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="HDF-pH-0LP"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="pv0-Xr-dq7" id="Djt-Dg-cdH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ged-0Y-Xk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2325.5" y="-598.5"/>
         </scene>
         <!--History-->
         <scene sceneID="wg7-f3-ORb">
@@ -196,4 +286,7 @@
         <image name="recordicon-4" width="272" height="112"/>
         <image name="settingsicon-2" width="30" height="29"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="XHB-4N-rBT"/>
+    </inferredMetricsTieBreakers>
 </document>

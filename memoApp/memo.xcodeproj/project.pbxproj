@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421697901F767A39006CB18D /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4216978F1F767A39006CB18D /* CameraViewController.swift */; };
 		62023F751F6A54B400DC81E4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62023F741F6A54B400DC81E4 /* RecordViewController.swift */; };
 		62DDAFA11F695C17005AB61F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DDAFA01F695C17005AB61F /* AppDelegate.swift */; };
 		62DDAFA31F695C17005AB61F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DDAFA21F695C17005AB61F /* MapViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4216978F1F767A39006CB18D /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		62023F741F6A54B400DC81E4 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		62DDAF9D1F695C17005AB61F /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DDAFA01F695C17005AB61F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4216978E1F7679F7006CB18D /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				62023F741F6A54B400DC81E4 /* RecordViewController.swift */,
+				4216978F1F767A39006CB18D /* CameraViewController.swift */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
 		62DDAF941F695C17005AB61F = {
 			isa = PBXGroup;
 			children = (
@@ -62,7 +73,7 @@
 		62DDAF9F1F695C17005AB61F /* memo */ = {
 			isa = PBXGroup;
 			children = (
-				62023F741F6A54B400DC81E4 /* RecordViewController.swift */,
+				4216978E1F7679F7006CB18D /* Record */,
 				62DDAFA01F695C17005AB61F /* AppDelegate.swift */,
 				62DDAFA21F695C17005AB61F /* MapViewController.swift */,
 				62DDAFA41F695C17005AB61F /* HistoryViewController.swift */,
@@ -108,6 +119,7 @@
 				TargetAttributes = {
 					62DDAF9C1F695C17005AB61F = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -152,6 +164,7 @@
 				62DDAFA11F695C17005AB61F /* AppDelegate.swift in Sources */,
 				62DDAFB91F695EBC005AB61F /* FriendsViewController.swift in Sources */,
 				62023F751F6A54B400DC81E4 /* RecordViewController.swift in Sources */,
+				421697901F767A39006CB18D /* CameraViewController.swift in Sources */,
 				62DDAFBB1F696D6A005AB61F /* SettingsViewController.swift in Sources */,
 				62DDAFA31F695C17005AB61F /* MapViewController.swift in Sources */,
 			);
@@ -291,13 +304,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QYM7BRDYY3;
+				DEVELOPMENT_TEAM = TPS4P9TJH7;
 				INFOPLIST_FILE = memo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Molla.memo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryu7726.memoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -307,13 +321,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QYM7BRDYY3;
+				DEVELOPMENT_TEAM = TPS4P9TJH7;
 				INFOPLIST_FILE = memo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Molla.memo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryu7726.memoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
