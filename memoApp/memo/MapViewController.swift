@@ -23,7 +23,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //    var longitude:UILabel! //경도
 //    var horizontalAccuracy :UILabel! // 이것도 뭔지 모르겠따.
 //    var altitude : UILabel! //자세인가?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

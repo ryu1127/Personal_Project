@@ -85,7 +85,6 @@
         <!--Record View Controller-->
         <scene sceneID="fw6-wy-YLF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OYg-2P-VZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="dwH-Dd-IIL" customClass="RecordViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vtF-4k-bGc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -101,6 +100,21 @@
                                     <segue destination="49e-Tb-3d3" kind="show" id="L9B-LQ-4UY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcz-SG-Z1R">
+                                <rect key="frame" x="94" y="97" width="187" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <state key="normal" title="카메라"/>
+                                <connections>
+                                    <segue destination="aRh-Q7-GRh" kind="show" id="Oqo-Xw-cGt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXH-Fh-eUL">
+                                <rect key="frame" x="94" y="304" width="187" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <state key="normal" title="앨범"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -110,8 +124,60 @@
                         <viewLayoutGuide key="safeArea" id="EkF-Q5-6H8"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYg-2P-VZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1455" y="-317"/>
+            <point key="canvasLocation" x="1453.5999999999999" y="-317.09145427286359"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JNl-6h-YRc">
+            <objects>
+                <viewController id="4ks-yD-L5A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f82-wo-5Mt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="VOe-5c-hOi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fya-3M-oo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2327" y="108"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="Jpm-Fv-gF6">
+            <objects>
+                <viewController id="aRh-Q7-GRh" customClass="CameraViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MXf-C7-JJt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pv0-Xr-dq7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnu-Fx-JGn">
+                                <rect key="frame" x="113" y="549" width="149" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <state key="normal" title="촬영"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt1-rk-M7I">
+                                <rect key="frame" x="16" y="581" width="69" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="&lt;"/>
+                                <connections>
+                                    <segue destination="dwH-Dd-IIL" kind="show" id="6OZ-S2-yXN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="HDF-pH-0LP"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ged-0Y-Xk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2325.5" y="-598.5"/>
         </scene>
         <!--History-->
         <scene sceneID="wg7-f3-ORb">
@@ -211,4 +277,8 @@
         <image name="recordicon-4" width="272" height="112"/>
         <image name="settingsicon-2" width="30" height="29"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Oqo-Xw-cGt"/>
+        <segue reference="6OZ-S2-yXN"/>
+    </inferredMetricsTieBreakers>
 </document>
