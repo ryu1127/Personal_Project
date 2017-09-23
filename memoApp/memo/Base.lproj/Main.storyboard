@@ -37,8 +37,7 @@
                                 <rect key="frame" x="51" y="491" width="272" height="112"/>
                                 <state key="normal" image="recordicon-4"/>
                                 <connections>
-                                    <action selector="recordButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="HUz-c0-jL5"/>
-                                    <segue destination="dwH-Dd-IIL" kind="show" id="LYc-Jv-KK3"/>
+                                    <segue destination="dwH-Dd-IIL" kind="show" id="XHB-4N-rBT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJZ-yW-OBB">
@@ -86,6 +85,7 @@
         <!--Record View Controller-->
         <scene sceneID="fw6-wy-YLF">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYg-2P-VZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="dwH-Dd-IIL" customClass="RecordViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vtF-4k-bGc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -110,7 +110,6 @@
                         <viewLayoutGuide key="safeArea" id="EkF-Q5-6H8"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OYg-2P-VZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1455" y="-317"/>
         </scene>
