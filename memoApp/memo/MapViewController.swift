@@ -15,20 +15,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var memoMap: MKMapView!
     @IBOutlet weak var trackingButton: UIButton!
     var startLocation : CLLocation! //처음 시작 위치
+    
+    //위치 관련 하여 현재 위치 확인해주는 함수
     var locationManager = CLLocationManager()
     
-    @IBOutlet weak var latitude: UILabel!
-    @IBOutlet weak var longitude: UILabel!
-    //    var latitude: UILabel! //위도
-//    var longitude:UILabel! //경도
-//    var horizontalAccuracy :UILabel! // 이것도 뭔지 모르겠따.
-//    var altitude : UILabel! //자세인가?
+    @IBOutlet weak var latitude: UILabel! // 위도 받아와 설정한 라벨 ( 화면상 )
+    @IBOutlet weak var longitude: UILabel! // 경도 //
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.startUpdatingLocation() // location 갱신기능
+        
         startLocation = nil // 기본 값으로 일단 초기화
         memoMap.delegate = self
         memoMap.showsScale = true

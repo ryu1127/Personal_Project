@@ -114,6 +114,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <state key="normal" title="앨범"/>
+                                <connections>
+                                    <segue destination="4ks-yD-L5A" kind="show" id="xye-Lm-MUH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,6 +164,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <state key="normal" title="촬영"/>
+                                <connections>
+                                    <action selector="pushBtn:" destination="aRh-Q7-GRh" eventType="touchUpInside" id="QDw-ft-p8e"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt1-rk-M7I">
                                 <rect key="frame" x="16" y="581" width="69" height="54"/>
@@ -174,6 +180,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="HDF-pH-0LP"/>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="pv0-Xr-dq7" id="Djt-Dg-cdH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ged-0Y-Xk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -278,7 +287,6 @@
         <image name="settingsicon-2" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oqo-Xw-cGt"/>
         <segue reference="6OZ-S2-yXN"/>
     </inferredMetricsTieBreakers>
 </document>
