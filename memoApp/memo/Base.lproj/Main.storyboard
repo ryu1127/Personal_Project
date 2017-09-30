@@ -287,6 +287,10 @@
         <image name="settingsicon-2" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="XHB-4N-rBT"/>
+=======
+        <segue reference="6OZ-S2-yXN"/>
+>>>>>>> 901f1f4812434b4d8f96787f98efc24eb3ba22c5
     </inferredMetricsTieBreakers>
 </document>

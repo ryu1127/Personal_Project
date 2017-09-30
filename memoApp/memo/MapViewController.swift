@@ -56,11 +56,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             //trackingButton.image = UIImage(named: "locationicon2-02")
         //이것도 주석 좀 ------ 여러번 누를때 방향표시 되게 하려다 관둔 흔적. 지워야 할듯..?
+        //이것도 주석 좀 ------
         case .follow:
             memoMap.setUserTrackingMode(.none, animated: true)
             
             //trackingButton.image = UIImage(named: "locationicon1-02")
         //이건 뭐하는 기능인지 ---- 이것도...
+        //이건 뭐하는 기능인지 ---- 주석 필요
         case .followWithHeading:
             memoMap.setUserTrackingMode(.follow, animated: true)
         }
