@@ -9,10 +9,14 @@
 import UIKit
 
 class RecordViewController: UIViewController {
-
+    @IBOutlet weak var longitude: UILabel!
+    @IBOutlet weak var latitude: UILabel!
+    var lati:Double?
+    var longi:Double?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        latitude.text = String(format:"%.4f",lati!);
+        longitude.text = String(format:"%.4f",longi!);
         // Do any additional setup after loading the view.
     }
 

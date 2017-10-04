@@ -20,10 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>현재 위치를 알려주세요!</string>
 	<key>NSCameraUsageDescription</key>
 	<string>촬영을 허용해주세요!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>현재 위치를 알려주세요!</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>앨범에서 사진을 가져올 수 있게 해주세요!</string>
 	<key>UILaunchStoryboardName</key>
