@@ -38,7 +38,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         lati = locationManager.location?.coordinate.latitude
         longi = locationManager.location?.coordinate.longitude  //lati,longi에 위도,경도값 입력
     }
-    //RecordViewController로 longi,lati 값 이동
+    //RecordViewController로 longi,lati 값 segue 전송준비
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var recordController = segue.destination as! RecordViewController
         recordController.lati = lati
@@ -47,7 +47,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBAction func recordButton(_ sender: Any) {
         if lati != nil
         {
-            performSegue(withIdentifier: "segue", sender: self)
+            performSegue(withIdentifier: "segue", sender: self) //segue 전송
         }
     }
     //탭버튼 누르면 적용
