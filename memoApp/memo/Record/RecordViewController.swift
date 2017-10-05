@@ -12,17 +12,17 @@ class RecordViewController: UIViewController {
     @IBOutlet weak var longitude: UILabel!
     @IBOutlet weak var latitude: UILabel!
     var lati:Double?
-    var longi:Double?
+    var longi:Double?  //MapView에서 넘어오는 위도경도값 받는 변수(lati,longi)
     override func viewDidLoad() {
         super.viewDidLoad()
-        latitude.text = String(format:"%.4f",lati!);
-        longitude.text = String(format:"%.4f",longi!);
-        // Do any additional setup after loading the view.
+        if let latit = lati, let longit = longi{
+            latitude.text = String(format:"%.4f",latit)
+            longitude.text = String(format:"%.4f",longit)//라벨에 위도 경도값 출력
+        }//lati 옵셔널 바인딩,longi 옵셔널 바인딩
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 

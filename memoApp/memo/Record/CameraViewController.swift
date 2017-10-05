@@ -28,7 +28,6 @@ class CameraViewController : UIViewController, AVCapturePhotoCaptureDelegate {
         print("pushed success camera btn!")
         stillImageOutput?.capturePhoto(with: settingsForMonitoring, delegate: self)
         //실행결과 이 부분을 들어오지 못함 아마도 NSGenericException과 NSException이 뜨는걸로 보아 이미지 연결이 되지 않아 문제가 발생하는 듯함.
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
