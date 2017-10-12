@@ -17,6 +17,7 @@
 		62DDAFAD1F695C17005AB61F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62DDAFAB1F695C17005AB61F /* LaunchScreen.storyboard */; };
 		62DDAFB91F695EBC005AB61F /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DDAFB81F695EBC005AB61F /* FriendsViewController.swift */; };
 		62DDAFBB1F696D6A005AB61F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DDAFBA1F696D6A005AB61F /* SettingsViewController.swift */; };
+		62DE05ED1F8F86F0006E4D7F /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DE05EC1F8F86F0006E4D7F /* WriteViewController.swift */; };
 		62F7A18A1F84FD5500CD8E46 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F7A1891F84FD5500CD8E46 /* AlbumViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		62DDAFAE1F695C17005AB61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62DDAFB81F695EBC005AB61F /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		62DDAFBA1F696D6A005AB61F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		62DE05EC1F8F86F0006E4D7F /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		62F7A1891F84FD5500CD8E46 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,6 +55,7 @@
 				62F7A1891F84FD5500CD8E46 /* AlbumViewController.swift */,
 				62023F741F6A54B400DC81E4 /* RecordViewController.swift */,
 				4216978F1F767A39006CB18D /* CameraViewController.swift */,
+				62DE05EC1F8F86F0006E4D7F /* WriteViewController.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DE05ED1F8F86F0006E4D7F /* WriteViewController.swift in Sources */,
 				62DDAFA51F695C17005AB61F /* HistoryViewController.swift in Sources */,
 				62DDAFA11F695C17005AB61F /* AppDelegate.swift in Sources */,
 				62DDAFB91F695EBC005AB61F /* FriendsViewController.swift in Sources */,
