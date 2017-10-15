@@ -12,9 +12,9 @@
 		621951D11F93C55F00DCC1AA /* HistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621951D01F93C55F00DCC1AA /* HistoryViewCell.swift */; };
 		621951D51F93D7F000DCC1AA /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621951D41F93D7F000DCC1AA /* Journal.swift */; };
 		621951D91F93E13600DCC1AA /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621951D81F93E13600DCC1AA /* HistoryTableViewController.swift */; };
+		621951DB1F941CC800DCC1AA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621951DA1F941CC800DCC1AA /* DetailViewController.swift */; };
 		62DDAFA11F695C17005AB61F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DDAFA01F695C17005AB61F /* AppDelegate.swift */; };
 		62DDAFA31F695C17005AB61F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DDAFA21F695C17005AB61F /* MapViewController.swift */; };
-		62DDAFA51F695C17005AB61F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DDAFA41F695C17005AB61F /* HistoryViewController.swift */; };
 		62DDAFA81F695C17005AB61F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62DDAFA61F695C17005AB61F /* Main.storyboard */; };
 		62DDAFAA1F695C17005AB61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62DDAFA91F695C17005AB61F /* Assets.xcassets */; };
 		62DDAFAD1F695C17005AB61F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62DDAFAB1F695C17005AB61F /* LaunchScreen.storyboard */; };
@@ -30,10 +30,10 @@
 		621951D01F93C55F00DCC1AA /* HistoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewCell.swift; sourceTree = "<group>"; };
 		621951D41F93D7F000DCC1AA /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		621951D81F93E13600DCC1AA /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		621951DA1F941CC800DCC1AA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		62DDAF9D1F695C17005AB61F /* memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DDAFA01F695C17005AB61F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62DDAFA21F695C17005AB61F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		62DDAFA41F695C17005AB61F /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		62DDAFA71F695C17005AB61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62DDAFA91F695C17005AB61F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62DDAFAC1F695C17005AB61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +66,16 @@
 			path = Record;
 			sourceTree = "<group>";
 		};
+		621951DC1F941CEC00DCC1AA /* History */ = {
+			isa = PBXGroup;
+			children = (
+				621951D81F93E13600DCC1AA /* HistoryTableViewController.swift */,
+				621951D01F93C55F00DCC1AA /* HistoryViewCell.swift */,
+				621951DA1F941CC800DCC1AA /* DetailViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		62DDAF941F695C17005AB61F = {
 			isa = PBXGroup;
 			children = (
@@ -86,11 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				4216978E1F7679F7006CB18D /* Record */,
+				621951DC1F941CEC00DCC1AA /* History */,
 				62DDAFA01F695C17005AB61F /* AppDelegate.swift */,
 				62DDAFA21F695C17005AB61F /* MapViewController.swift */,
-				621951D81F93E13600DCC1AA /* HistoryTableViewController.swift */,
-				62DDAFA41F695C17005AB61F /* HistoryViewController.swift */,
-				621951D01F93C55F00DCC1AA /* HistoryViewCell.swift */,
 				62DDAFA61F695C17005AB61F /* Main.storyboard */,
 				62DDAFA91F695C17005AB61F /* Assets.xcassets */,
 				621951D41F93D7F000DCC1AA /* Journal.swift */,
@@ -176,9 +184,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				62DE05ED1F8F86F0006E4D7F /* WriteViewController.swift in Sources */,
-				62DDAFA51F695C17005AB61F /* HistoryViewController.swift in Sources */,
 				62DDAFA11F695C17005AB61F /* AppDelegate.swift in Sources */,
 				62DDAFB91F695EBC005AB61F /* FriendsViewController.swift in Sources */,
+				621951DB1F941CC800DCC1AA /* DetailViewController.swift in Sources */,
 				62023F751F6A54B400DC81E4 /* RecordViewController.swift in Sources */,
 				62F7A18A1F84FD5500CD8E46 /* AlbumViewController.swift in Sources */,
 				421697901F767A39006CB18D /* CameraViewController.swift in Sources */,

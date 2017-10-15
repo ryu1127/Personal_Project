@@ -7,7 +7,11 @@
 //
 
 import Foundation
-class Journal{
+class Journal : CustomStringConvertible{
+    var description: String{
+        return name + " at \(latitude),\(longitude) " + "'"+contents+"'"
+    }
+    
     init(latitude: Double,
          longitude: Double,
          name: String,
@@ -28,11 +32,5 @@ class Journal{
         didSet{
             print("Name Changed")
         }
-    }
-    public var displayContents:String{
-        return contents
-    }
-    public var displayName:String{
-        return name
     }
 }

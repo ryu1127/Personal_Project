@@ -9,9 +9,9 @@
 import UIKit
 
 class HistoryTableViewController: UITableViewController {
-    let journals = [Journal(latitude:0.0,longitude:0.0,name:"Journal1",contents:"content comes here"),
-                    Journal(latitude:0.0,longitude:0.0,name:"Journal2",contents:"content comes here"),
-                    Journal(latitude:0.0,longitude:0.0,name:"Journal3",contents:"content comes here")]
+    let journals = [Journal(latitude:0.0,longitude:0.0,name:"Journal1",contents:"first content"),
+                    Journal(latitude:0.0,longitude:0.0,name:"Journal2",contents:"second content"),
+                    Journal(latitude:0.0,longitude:0.0,name:"Journal3",contents:"third content")]
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -42,9 +42,10 @@ class HistoryTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryViewCell
 
-        cell.HistoryCell.text = journals[index]
+        cell.nameLabel.text = String(describing: journals[indexPath.row])
+        
         // Configure the cell...
 
         return cell
