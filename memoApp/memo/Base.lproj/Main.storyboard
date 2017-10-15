@@ -13,6 +13,9 @@
         <array key="AppleSDGothicNeo.ttc">
             <string>AppleSDGothicNeo-Bold</string>
         </array>
+        <array key="NotoNastaliq.ttc">
+            <string>NotoNastaliqUrdu</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Map-->
@@ -150,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYg-2P-VZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1453.5999999999999" y="-317.09145427286359"/>
+            <point key="canvasLocation" x="1454" y="-321"/>
         </scene>
         <!--Album View Controller-->
         <scene sceneID="JNl-6h-YRc">
@@ -178,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fya-3M-oo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3004" y="107.49625187406298"/>
+            <point key="canvasLocation" x="2622" y="358"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="Jpm-Fv-gF6">
@@ -220,12 +223,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ged-0Y-Xk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2325.5" y="-598.5"/>
+            <point key="canvasLocation" x="2622" y="-322"/>
         </scene>
         <!--History-->
         <scene sceneID="roJ-y9-4PL">
             <objects>
-                <tableViewController id="anX-lY-pGS" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bj8-Y5-cdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="anX-lY-pGS" customClass="HistoryTableViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qbg-qv-HIc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,7 +244,7 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="80" id="c21-j6-bIr">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="80" id="c21-j6-bIr" customClass="HistoryViewCell" customModule="memo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c21-j6-bIr" id="I3v-9q-ehA">
@@ -265,8 +269,8 @@
                                                     <state key="normal" title="Edit"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="descriptions..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJ4-GV-o9A">
-                                                    <rect key="frame" x="78" y="27" width="216" height="43"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="78" y="10" width="216" height="43"/>
+                                                    <fontDescription key="fontDescription" name="NotoNastaliqUrdu" family="Noto Nastaliq Urdu" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -285,6 +289,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="descriptLabel" destination="MJ4-GV-o9A" id="xFh-q4-KGs"/>
+                                    <outlet property="historyImage" destination="NG3-US-GNC" id="fn7-if-AEH"/>
+                                    <outlet property="nameLabel" destination="HSt-Pe-cpA" id="IeJ-uF-Vao"/>
                                     <segue destination="BiR-rm-GnK" kind="presentation" identifier="showNote" id="sWw-xp-Pfh"/>
                                 </connections>
                             </tableViewCell>
@@ -296,7 +303,6 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="History" id="SY8-FD-f6B"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bj8-Y5-cdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="357.57121439280365"/>
         </scene>
@@ -344,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDl-Wf-qET" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1654" y="590"/>
+            <point key="canvasLocation" x="1454" y="358"/>
         </scene>
         <!--Friends-->
         <scene sceneID="RPj-ME-h3s">
@@ -407,6 +413,6 @@
         <image name="settingsicon-2" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6Df-SZ-3L2"/>
+        <segue reference="XHB-4N-rBT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,6 +10,9 @@ import UIKit
 
 class HistoryViewController: UIViewController {
 
+    let journals = [Journal(latitude:0.0,longitude:0.0,name:"Journal1",contents:"content comes     here"),
+                    Journal(latitude:0.0,longitude:0.0,name:"Journal2",contents:"content comes here"),
+                    Journal(latitude:0.0,longitude:0.0,name:"Journal3",contents:"content comes here")]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
