@@ -22,6 +22,9 @@
         <array key="NotoNastaliq.ttc">
             <string>NotoNastaliqUrdu</string>
         </array>
+        <array key="Thonburi.ttc">
+            <string>Thonburi-Bold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Map-->
@@ -50,20 +53,6 @@
                                     <segue destination="dwH-Dd-IIL" kind="show" identifier="segue" id="XHB-4N-rBT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJZ-yW-OBB">
-                                <rect key="frame" x="220" y="389" width="135" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="so3-cn-Ics">
-                                <rect key="frame" x="220" y="434" width="139" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -82,8 +71,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="mapicon-2" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="latitude" destination="GJZ-yW-OBB" id="Iek-9m-vrp"/>
-                        <outlet property="longitude" destination="so3-cn-Ics" id="T1m-Oy-Mmt"/>
                         <outlet property="memoMap" destination="rjy-FZ-gkd" id="y8K-6G-a3E"/>
                         <outlet property="trackingButton" destination="93G-hu-qWM" id="DAl-fa-QLX"/>
                     </connections>
@@ -201,26 +188,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pv0-Xr-dq7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jAa-cc-03F">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnu-Fx-JGn">
-                                <rect key="frame" x="113" y="549" width="149" height="118"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
-                                <state key="normal" title="촬영"/>
-                                <connections>
-                                    <action selector="pushBtn:" destination="aRh-Q7-GRh" eventType="touchUpInside" id="QDw-ft-p8e"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt1-rk-M7I">
-                                <rect key="frame" x="16" y="581" width="69" height="54"/>
+                                <rect key="frame" x="16" y="570" width="69" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="69"/>
                                 <state key="normal" title="&lt;"/>
                                 <connections>
                                     <segue destination="dwH-Dd-IIL" kind="show" id="6OZ-S2-yXN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8M0-xe-Goa">
+                                <rect key="frame" x="153" y="594" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="SHUTTER"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="aRh-Q7-GRh" eventType="touchUpInside" id="DIs-zI-2ig"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -228,17 +215,16 @@
                         <viewLayoutGuide key="safeArea" id="HDF-pH-0LP"/>
                     </view>
                     <connections>
-                        <outlet property="cameraView" destination="pv0-Xr-dq7" id="Djt-Dg-cdH"/>
+                        <outlet property="previewView" destination="jAa-cc-03F" id="NSW-w7-Twi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ged-0Y-Xk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2622" y="-322"/>
+            <point key="canvasLocation" x="2621.5999999999999" y="-322.48875562218893"/>
         </scene>
         <!--History-->
         <scene sceneID="roJ-y9-4PL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bj8-Y5-cdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="anX-lY-pGS" customClass="HistoryTableViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qbg-qv-HIc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -296,8 +282,9 @@
                             <outlet property="delegate" destination="anX-lY-pGS" id="FkJ-tJ-zbt"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="History" id="SY8-FD-f6B"/>
+                    <tabBarItem key="tabBarItem" title="History" image="historyicon-2" id="SY8-FD-f6B"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bj8-Y5-cdW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="357.57121439280365"/>
         </scene>
@@ -404,13 +391,14 @@
     </scenes>
     <resources>
         <image name="friendsicon-2" width="30" height="29"/>
+        <image name="historyicon-2" width="30" height="29"/>
         <image name="locationicon1-2" width="75" height="74"/>
         <image name="mapicon-2" width="30" height="29"/>
         <image name="recordicon-4" width="272" height="112"/>
         <image name="settingsicon-2" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OPa-dp-47R"/>
-        <segue reference="XHB-4N-rBT"/>
+        <segue reference="L9B-LQ-4UY"/>
+        <segue reference="6OZ-S2-yXN"/>
     </inferredMetricsTieBreakers>
 </document>
