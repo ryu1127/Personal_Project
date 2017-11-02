@@ -13,6 +13,10 @@ class RecordViewController: UIViewController {
     @IBOutlet weak var latitude: UILabel!
     var lati:Double?
     var longi:Double?  //MapView에서 넘어오는 위도경도값 받는 변수(lati,longi)
+    
+    let imagePicker = UIImagePickerController()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if let latit = lati, let longit = longi{

@@ -5,13 +5,27 @@
 //  Created by 이효중 on 2017. 10. 4..
 //  Copyright © 2017년 이효중. All rights reserved.
 //
-/* 참고
- https://m.blog.naver.com/PostView.nhn?blogId=scw0531&logNo=220848324272&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
- */
+
 
 import UIKit
-class AlbumViewController: UIViewController {
+class AlbumViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    //UIImagePickerControllerDelegate, UINavigationControllerDelegate
+    //두개는 밑에서 picker 인스턴스를 사용할때 필요하므로 같이 상속받은 것이다.
+    //여기에 하지 않을 거면 picker.delegate = self as! UI~~~, UI~~~ 이런식으로 작성
+    
+    //이미지 뷰어를 통해 만들어 두었다.
+    @IBOutlet weak var imageView: UIImageView!
+    
 
+    
+    
+
+    
+    @IBAction func pickImage(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
