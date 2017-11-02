@@ -58,6 +58,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             //탭버튼을 눌렀을때 활성화
             //location값 입력시 작동하여 화면의 라벨에 표시
+            
+            // ------------------------------------------------------------------------
             if lati == locationManager.location?.coordinate.latitude{
                 print(lati!)
                 latitude.text = String(format:"%.4f",lati!);
@@ -66,7 +68,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 print(longi!)
                 longitude.text = String(format:"%.4f",longi!);
             }
+            // --------------------------------------------------------------------------
             
+            // 여기부분 실행했을때 계속 오류떠!!
+            // 메인화면에서 현재 위치 확인했을때 오류 게속 발생함 수정 바람
             
             print("tap Button!");
             
