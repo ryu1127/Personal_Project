@@ -1,11 +1,3 @@
-//
-//  CameraViewController.swift
-//  memo
-//
-//  Created by 이효중 on 2017. 11. 1..
-//  Copyright © 2017년 이효중. All rights reserved.
-//
-
 import UIKit
 import AVFoundation
 
@@ -15,23 +7,6 @@ class CameraViewController: UIViewController {
     var session = AVCaptureSession()
     var photoOutput = AVCapturePhotoOutput()
     let notification = NotificationCenter.default
-    
-    func photoOutput(_ output: AVCapturePhotoOutput,
-                     didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
-                     previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
-                     resolvedSettings: AVCaptureResolvedPhotoSettings,
-                     bracketSettings: AVCaptureBracketedStillImageSettings?,
-                     error: Error?) {
-        let photoData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(
-            forJPEGSampleBuffer: photoSampleBuffer!,
-            previewPhotoSampleBuffer: previewPhotoSampleBuffer)
-        if let data = photoData {
-            if let stillImage = UIImage(data: data) {
-                UIImageWriteToSavedPhotosAlbum(stillImage,self,nil,nil)
-            }
-        }
-    }
-    
     func setupInputOutput(){
         session.sessionPreset = AVCaptureSession.Preset.photo
         do {
@@ -79,25 +54,10 @@ class CameraViewController: UIViewController {
         setupInputOutput()
         setPreviewLayer()
         session.startRunning()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
