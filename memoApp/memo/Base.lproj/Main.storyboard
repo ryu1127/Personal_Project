@@ -133,6 +133,10 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJH-jp-LPQ">
+                                <rect key="frame" x="68" y="207" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -142,6 +146,12 @@
                         <viewLayoutGuide key="safeArea" id="EkF-Q5-6H8"/>
                     </view>
                     <connections>
+<<<<<<< HEAD
+=======
+                        <outlet property="Latitude" destination="Hma-7p-yq0" id="nZY-gk-gmu"/>
+                        <outlet property="Longitude" destination="icz-iH-QD1" id="gIT-Zb-vlI"/>
+                        <outlet property="imageViewSegue" destination="jJH-jp-LPQ" id="b1d-TK-Sid"/>
+>>>>>>> 6c507fa94abd58d1a4514115d7f131cc63c5bf08
                         <outlet property="latitude" destination="Hma-7p-yq0" id="CXv-JX-7KX"/>
                         <outlet property="longitude" destination="icz-iH-QD1" id="Xw0-dy-Ovt"/>
                     </connections>
@@ -177,6 +187,15 @@
                                 <rect key="frame" x="0.0" y="58" width="375" height="551"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncm-wE-OQU">
+                                <rect key="frame" x="153" y="607" width="69" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="선택"/>
+                                <connections>
+                                    <action selector="saveBtn:" destination="4ks-yD-L5A" eventType="touchUpInside" id="KmT-23-rRH"/>
+                                    <segue destination="dwH-Dd-IIL" kind="show" identifier="imageSegue" id="UaD-Ku-yLh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -412,6 +431,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="L9B-LQ-4UY"/>
+<<<<<<< HEAD
         <segue reference="6OZ-S2-yXN"/>
+=======
+        <segue reference="UaD-Ku-yLh"/>
+>>>>>>> 6c507fa94abd58d1a4514115d7f131cc63c5bf08
     </inferredMetricsTieBreakers>
 </document>
