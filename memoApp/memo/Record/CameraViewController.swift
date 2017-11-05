@@ -7,6 +7,21 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var session = AVCaptureSession()
     var photoOutput = AVCapturePhotoOutput()
     let notification = NotificationCenter.default
+    func photoOutput(_ output: AVCapturePhotoOutput,
+                     didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
+                     previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
+                     resolvedSettings: AVCaptureResolvedPhotoSettings,
+                     bracketSettings: AVCaptureBracketedStillImageSettings?,
+                     error: Error?) {
+        let photoData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(
+            forJPEGSampleBuffer: photoSampleBuffer!,
+            previewPhotoSampleBuffer: previewPhotoSampleBuffer)
+        if let data = photoData {
+            if let stillImage = UIImage(data: data) {
+                UIImageWriteToSavedPhotosAlbum(stillImage,self,nil,nil)
+            }
+        }
+    }
     func setupInputOutput(){
         session.sessionPreset = AVCaptureSession.Preset.photo
         do {
