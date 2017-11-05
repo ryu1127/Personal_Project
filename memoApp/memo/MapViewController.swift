@@ -62,11 +62,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             // ------------------------------------------------------------------------
             if lati == locationManager.location?.coordinate.latitude{
                 print(lati!)
-                latitude.text = String(format:"%.4f",lati!);
             }
             if longi == locationManager.location?.coordinate.longitude{
                 print(longi!)
-                longitude.text = String(format:"%.4f",longi!);
             }
             // --------------------------------------------------------------------------
             
@@ -76,7 +74,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             print("tap Button!");
             
             //trackingButton.image = UIImage(named: "locationicon2-02")
-        //이것도 주석 좀 ------ 여러번 누를때 방향표시 되게 하려다 관둔 흔적. 나중에 지워야 할듯..?
         case .follow:
             memoMap.setUserTrackingMode(.none, animated: true)
             

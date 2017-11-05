@@ -142,8 +142,6 @@
                         <viewLayoutGuide key="safeArea" id="EkF-Q5-6H8"/>
                     </view>
                     <connections>
-                        <outlet property="Latitude" destination="Hma-7p-yq0" id="nZY-gk-gmu"/>
-                        <outlet property="Longitude" destination="icz-iH-QD1" id="gIT-Zb-vlI"/>
                         <outlet property="latitude" destination="Hma-7p-yq0" id="CXv-JX-7KX"/>
                         <outlet property="longitude" destination="icz-iH-QD1" id="Xw0-dy-Ovt"/>
                     </connections>
@@ -222,7 +220,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SHUTTER"/>
                                 <connections>
-                                    <action selector="takePhoto:" destination="aRh-Q7-GRh" eventType="touchUpInside" id="DIs-zI-2ig"/>
+                                    <action selector="takePhoto:" destination="aRh-Q7-GRh" eventType="touchUpInside" id="mKj-bp-1rm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -413,8 +411,7 @@
         <image name="settingsicon-2" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xye-Lm-MUH"/>
         <segue reference="L9B-LQ-4UY"/>
-        <segue reference="6Df-SZ-3L2"/>
+        <segue reference="6OZ-S2-yXN"/>
     </inferredMetricsTieBreakers>
 </document>
