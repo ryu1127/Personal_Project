@@ -17,12 +17,12 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate{
     var photoOutput = AVCapturePhotoOutput()
     let notification = NotificationCenter.default
     
-    func capture(_captureOutput : AVCapturePhotoOutput,
-                 didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?,
-                 previewPhotoSampleBuffer : CMSampleBuffer?,
-                 resolvedSettings : AVCaptureResolvedPhotoSettings,
-                 bracketSettings : AVCaptureBracketedStillImageSettings?,
-                 error : Error?) {
+    func photoOutput(_ output: AVCapturePhotoOutput,
+                     didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
+                     previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
+                     resolvedSettings: AVCaptureResolvedPhotoSettings,
+                     bracketSettings: AVCaptureBracketedStillImageSettings?,
+                     error: Error?) {
         let photoData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(
             forJPEGSampleBuffer: photoSampleBuffer!,
             previewPhotoSampleBuffer: previewPhotoSampleBuffer)

@@ -146,12 +146,9 @@
                         <viewLayoutGuide key="safeArea" id="EkF-Q5-6H8"/>
                     </view>
                     <connections>
-<<<<<<< HEAD
-=======
                         <outlet property="Latitude" destination="Hma-7p-yq0" id="nZY-gk-gmu"/>
                         <outlet property="Longitude" destination="icz-iH-QD1" id="gIT-Zb-vlI"/>
                         <outlet property="imageViewSegue" destination="jJH-jp-LPQ" id="b1d-TK-Sid"/>
->>>>>>> 6c507fa94abd58d1a4514115d7f131cc63c5bf08
                         <outlet property="latitude" destination="Hma-7p-yq0" id="CXv-JX-7KX"/>
                         <outlet property="longitude" destination="icz-iH-QD1" id="Xw0-dy-Ovt"/>
                     </connections>
@@ -431,10 +428,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="L9B-LQ-4UY"/>
-<<<<<<< HEAD
         <segue reference="6OZ-S2-yXN"/>
-=======
-        <segue reference="UaD-Ku-yLh"/>
->>>>>>> 6c507fa94abd58d1a4514115d7f131cc63c5bf08
     </inferredMetricsTieBreakers>
 </document>
