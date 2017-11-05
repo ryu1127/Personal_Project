@@ -22,9 +22,6 @@
         <array key="NotoNastaliq.ttc">
             <string>NotoNastaliqUrdu</string>
         </array>
-        <array key="Thonburi.ttc">
-            <string>Thonburi-Bold</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Map-->
@@ -39,15 +36,19 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93G-hu-qWM">
-                                <rect key="frame" x="280" y="40" width="75" height="74"/>
-                                <state key="normal" image="locationicon1-2"/>
+                                <rect key="frame" x="305" y="40" width="50" height="67"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                <state key="normal" title="📡"/>
                                 <connections>
                                     <action selector="tapTrackButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="L9Z-hR-uPT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7W-x2-6u3">
-                                <rect key="frame" x="51" y="491" width="272" height="112"/>
-                                <state key="normal" image="recordicon-4"/>
+                                <rect key="frame" x="143" y="493" width="88" height="110"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="82"/>
+                                <state key="normal" title="📝">
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="recordButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="pS7-dT-e8P"/>
                                     <segue destination="dwH-Dd-IIL" kind="show" identifier="segue" id="XHB-4N-rBT"/>
@@ -87,33 +88,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBy-7m-4my">
-                                <rect key="frame" x="165.5" y="565" width="44" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBy-7m-4my">
+                                <rect key="frame" x="165" y="596" width="44" height="42"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
                                 <state key="normal" title="취소">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.99607473611831665" green="0.99220293760299683" blue="0.99199241399765015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="show" id="L9B-LQ-4UY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcz-SG-Z1R">
-                                <rect key="frame" x="94" y="97" width="187" height="145"/>
+                                <rect key="frame" x="157" y="328" width="61" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="48"/>
-                                <state key="normal" title="카메라">
+                                <state key="normal" title="📷">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="1" green="0.84873241186141968" blue="0.21984976530075073" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="aRh-Q7-GRh" kind="show" id="Oqo-Xw-cGt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXH-Fh-eUL">
-                                <rect key="frame" x="94" y="304" width="187" height="145"/>
+                                <rect key="frame" x="152" y="401" width="71" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="48"/>
-                                <state key="normal" title="앨범">
+                                <state key="normal" title="🖼">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="1" green="0.84873241186141968" blue="0.21984976530075073" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="4ks-yD-L5A" kind="show" id="xye-Lm-MUH"/>
@@ -123,22 +127,50 @@
                                 <rect key="frame" x="127" y="510" width="121" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.2017122209072113" green="0.45807075500488281" blue="0.6906619668006897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Latitude" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hma-7p-yq0">
                                 <rect key="frame" x="128" y="481" width="120" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.2017122209072113" green="0.45807075500488281" blue="0.6906619668006897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJH-jp-LPQ">
-                                <rect key="frame" x="68" y="207" width="240" height="128"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="사진을" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHl-Aj-6RC">
+                                <rect key="frame" x="155" y="125" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="찍을건가요," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2r-9I-2P5">
+                                <rect key="frame" x="133" y="154" width="109" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="가져올건가요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfx-nd-ntL">
+                                <rect key="frame" x="128" y="183" width="121" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AD-p7-Ice">
+                                <rect key="frame" x="128" y="213" width="121" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJH-jp-LPQ">
+                                <rect key="frame" x="16" y="31" width="343" height="259"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.84715675103205079" blue="0.2180700212034925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EkF-Q5-6H8" firstAttribute="bottom" secondItem="xBy-7m-4my" secondAttribute="bottom" constant="60" id="6aL-YZ-R3U"/>
                             <constraint firstItem="xBy-7m-4my" firstAttribute="centerX" secondItem="vtF-4k-bGc" secondAttribute="centerX" id="bxO-j0-p8s"/>
@@ -155,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYg-2P-VZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454" y="-321"/>
+            <point key="canvasLocation" x="1453.5999999999999" y="-321.58920539730138"/>
         </scene>
         <!--Album View Controller-->
         <scene sceneID="JNl-6h-YRc">
@@ -218,29 +250,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jAa-cc-03F">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="566"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt1-rk-M7I">
-                                <rect key="frame" x="16" y="570" width="69" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="69"/>
-                                <state key="normal" title="&lt;"/>
-                                <connections>
-                                    <segue destination="dwH-Dd-IIL" kind="show" id="6OZ-S2-yXN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8M0-xe-Goa">
-                                <rect key="frame" x="153" y="594" width="68" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SHUTTER"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8M0-xe-Goa">
+                                <rect key="frame" x="149.5" y="561" width="75" height="96"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <state key="normal" title="📸"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="aRh-Q7-GRh" eventType="touchUpInside" id="DIs-zI-2ig"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt1-rk-M7I">
+                                <rect key="frame" x="34" y="585" width="38" height="53"/>
+                                <state key="normal" image="Back"/>
+                                <connections>
+                                    <segue destination="dwH-Dd-IIL" kind="show" id="6OZ-S2-yXN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HDF-pH-0LP" firstAttribute="bottom" secondItem="8M0-xe-Goa" secondAttribute="bottom" constant="10" id="FCn-kC-ykx"/>
+                            <constraint firstItem="HDF-pH-0LP" firstAttribute="bottom" secondItem="Wt1-rk-M7I" secondAttribute="bottom" constant="29" id="bV4-MP-lTj"/>
+                            <constraint firstItem="Wt1-rk-M7I" firstAttribute="leading" secondItem="HDF-pH-0LP" secondAttribute="leading" constant="34" id="gro-sj-Unf"/>
+                            <constraint firstItem="8M0-xe-Goa" firstAttribute="centerX" secondItem="MXf-C7-JJt" secondAttribute="centerX" id="qjk-zi-JwF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HDF-pH-0LP"/>
                     </view>
                     <connections>
@@ -404,7 +440,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.48334390862944165" green="0.48334390862944165" blue="0.48334390862944165" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -419,15 +455,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back" width="38" height="53"/>
         <image name="friendsicon-2" width="30" height="29"/>
         <image name="historyicon-2" width="30" height="29"/>
-        <image name="locationicon1-2" width="75" height="74"/>
         <image name="mapicon-2" width="30" height="29"/>
-        <image name="recordicon-4" width="272" height="112"/>
         <image name="settingsicon-2" width="30" height="29"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="L9B-LQ-4UY"/>
-        <segue reference="UaD-Ku-yLh"/>
+        <segue reference="XHB-4N-rBT"/>
     </inferredMetricsTieBreakers>
 </document>

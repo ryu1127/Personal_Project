@@ -7,6 +7,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var session = AVCaptureSession()
     var photoOutput = AVCapturePhotoOutput()
     let notification = NotificationCenter.default
+    //캡쳐델리게이트 설정
     func photoOutput(_ output: AVCapturePhotoOutput,
                      didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
                      previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?,
@@ -54,6 +55,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         videoLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         previewView.layer.addSublayer(videoLayer)
     }
+    //이미지 캡쳐 설정
     @IBAction func takePhoto(_ sender: Any) {
         let captureSetting = AVCapturePhotoSettings()
         captureSetting.flashMode = .auto
