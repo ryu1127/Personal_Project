@@ -236,7 +236,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SHUTTER"/>
                                 <connections>
-                                    <action selector="takePhoto:" destination="aRh-Q7-GRh" eventType="touchUpInside" id="mKj-bp-1rm"/>
+                                    <action selector="takePhoto:" destination="aRh-Q7-GRh" eventType="touchUpInside" id="DIs-zI-2ig"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -429,5 +429,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="L9B-LQ-4UY"/>
         <segue reference="6OZ-S2-yXN"/>
+=======
+        <segue reference="UaD-Ku-yLh"/>
+>>>>>>> 47512ffc1b010bba97c984836f49f8b8a4f033ba
     </inferredMetricsTieBreakers>
 </document>

@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import Photos
 import AVFoundation
 
-class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate{
+class CameraViewController: UIViewController {
 
     @IBOutlet weak var previewView: UIView!
     var session = AVCaptureSession()
@@ -70,7 +69,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate{
         captureSetting.flashMode = .auto
         captureSetting.isAutoStillImageStabilizationEnabled = true
         captureSetting.isHighResolutionPhotoEnabled = false
-        photoOutput.capturePhoto(with: captureSetting, delegate: self)
+        photoOutput.capturePhoto(with: captureSetting, delegate: self as! AVCapturePhotoCaptureDelegate)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
