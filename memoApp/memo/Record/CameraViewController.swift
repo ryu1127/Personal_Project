@@ -7,32 +7,14 @@
 //
 
 import UIKit
-import Photos
 import AVFoundation
 
-class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate{
+class CameraViewController: UIViewController {
 
     @IBOutlet weak var previewView: UIView!
     var session = AVCaptureSession()
     var photoOutput = AVCapturePhotoOutput()
     let notification = NotificationCenter.default
-    
-    func capture(_captureOutput : AVCapturePhotoOutput,
-                 didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?,
-                 previewPhotoSampleBuffer : CMSampleBuffer?,
-                 resolvedSettings : AVCaptureResolvedPhotoSettings,
-                 bracketSettings : AVCaptureBracketedStillImageSettings?,
-                 error : Error?) {
-        let photoData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(
-            forJPEGSampleBuffer: photoSampleBuffer!,
-            previewPhotoSampleBuffer: previewPhotoSampleBuffer)
-        if let data = photoData {
-            if let stillImage = UIImage(data: data) {
-                UIImageWriteToSavedPhotosAlbum(stillImage,self,nil,nil)
-            }
-        }
-    }
-    
     func setupInputOutput(){
         session.sessionPreset = AVCaptureSession.Preset.photo
         do {
@@ -70,7 +52,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate{
         captureSetting.flashMode = .auto
         captureSetting.isAutoStillImageStabilizationEnabled = true
         captureSetting.isHighResolutionPhotoEnabled = false
-        photoOutput.capturePhoto(with: captureSetting, delegate: self)
+        photoOutput.capturePhoto(with: captureSetting, delegate: self as! AVCapturePhotoCaptureDelegate)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
