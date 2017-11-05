@@ -19,10 +19,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //위치 관련 하여 현재 위치 확인해주는 함수
     var locationManager = CLLocationManager()
     
+    //텍스트 변경을 viewDidLoad()에서 해주기 위해 변수 선언 
+    var latiTxt : String?
+    var longiTxt : String?
+    
     @IBOutlet weak var latitude: UILabel! // 위도 받아와 설정한 라벨 ( 화면상 )
     @IBOutlet weak var longitude: UILabel! // 경도 //
     var lati: Double?  //위도 레코드페이지로 넘기기 위해서 전역변수 lati 선언
     var longi: Double?  //경도 " longi "
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +36,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.delegate = self
         locationManager.startUpdatingLocation() // location 갱신기능
         
+        
         startLocation = nil // 기본 값으로 일단 초기화
         memoMap.delegate = self
         memoMap.showsScale = true
 
         lati = locationManager.location?.coordinate.latitude
         longi = locationManager.location?.coordinate.longitude  //lati,longi에 위도,경도값 입력
+        
+        if latiTxt != nil {
+            latitude.text = latiTxt
+        }
+        if longiTxt != nil {
+            longitude.text = longiTxt
+        }
+        
     }
     //RecordViewController로 longi,lati 값 segue 전송준비
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -60,11 +74,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             //location값 입력시 작동하여 화면의 라벨에 표시
             
             // ------------------------------------------------------------------------
-            if lati == locationManager.location?.coordinate.latitude{
+            if lati != nil{
                 print(lati!)
+<<<<<<< Updated upstream
             }
             if longi == locationManager.location?.coordinate.longitude{
                 print(longi!)
+=======
+                //오류 수정 ( latiTxt변수
+                latiTxt = String(format:"%.4f",lati!);
+                print("latiTxt : \(latiTxt!)")
+                print("txt complete...")
+                print("textView success...")
+            }
+            if longi == locationManager.location?.coordinate.longitude{
+                print(longi!)
+                longiTxt = String(format:"%.4f",longi!);
+                print("longiTxt : \(longiTxt!)")
+>>>>>>> Stashed changes
             }
             // --------------------------------------------------------------------------
             
