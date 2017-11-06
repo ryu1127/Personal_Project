@@ -225,6 +225,11 @@
                                     <segue destination="dwH-Dd-IIL" kind="show" identifier="imageSegue" id="UaD-Ku-yLh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snE-2J-rg2">
+                                <rect key="frame" x="321" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="편집"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -266,7 +271,7 @@
                                 <rect key="frame" x="34" y="585" width="38" height="53"/>
                                 <state key="normal" image="Back"/>
                                 <connections>
-                                    <segue destination="dwH-Dd-IIL" kind="show" id="6OZ-S2-yXN"/>
+                                    <segue destination="dwH-Dd-IIL" kind="show" identifier="captureSegue" id="B2b-Rj-fxI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -300,6 +305,16 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="History" id="B7e-Va-Fh9">
+                                    <barButtonItem key="leftBarButtonItem" style="plain" id="n3p-sU-tWC">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hFP-U7-z9O">
+                                            <rect key="frame" x="16" y="7" width="34" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Back"/>
+                                            <connections>
+                                                <segue destination="49e-Tb-3d3" kind="show" id="yXH-bK-Mps"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" systemItem="edit" id="RJb-jI-YdY"/>
                                 </navigationItem>
                             </items>
@@ -361,13 +376,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VMB-8n-2Bf">
-                                <rect key="frame" x="18" y="147" width="339" height="271.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Contents displays here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGW-03-KOt">
                                 <rect key="frame" x="16" y="72" width="112" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
@@ -379,20 +387,32 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="21"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" id="OPa-dp-47R"/>
+                                    <segue destination="anX-lY-pGS" kind="show" id="nRI-Fu-9mh"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="historyicon-2" translatesAutoresizingMaskIntoConstraints="NO" id="mrV-nw-caX">
+                                <rect key="frame" x="44" y="128" width="289" height="208"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pF4-Ma-Tae">
+                                <rect key="frame" x="61" y="506" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VMB-8n-2Bf">
+                                <rect key="frame" x="18" y="352" width="341" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Contents displays here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.99607473611831665" green="0.99220293760299683" blue="0.99199241399765015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tGW-03-KOt" firstAttribute="top" secondItem="dFx-PI-uRk" secondAttribute="bottom" constant="8" id="JHb-cg-gh0"/>
                             <constraint firstItem="tGW-03-KOt" firstAttribute="leading" secondItem="ElH-hm-xD1" secondAttribute="leading" constant="16" id="L1g-Xk-Tqy"/>
-                            <constraint firstItem="VMB-8n-2Bf" firstAttribute="top" secondItem="tGW-03-KOt" secondAttribute="bottom" constant="27" id="Lkt-mb-4OZ"/>
-                            <constraint firstItem="VMB-8n-2Bf" firstAttribute="leading" secondItem="ElH-hm-xD1" secondAttribute="leading" constant="18" id="Rq5-kp-0z5"/>
                             <constraint firstItem="dFx-PI-uRk" firstAttribute="top" secondItem="ElH-hm-xD1" secondAttribute="top" constant="6" id="W7j-LI-Ui7"/>
-                            <constraint firstItem="ElH-hm-xD1" firstAttribute="bottom" secondItem="VMB-8n-2Bf" secondAttribute="bottom" constant="248.5" id="fBQ-gc-yQ1"/>
                             <constraint firstItem="dFx-PI-uRk" firstAttribute="leading" secondItem="ElH-hm-xD1" secondAttribute="leading" constant="16" id="hqZ-fA-Mbm"/>
-                            <constraint firstItem="ElH-hm-xD1" firstAttribute="trailing" secondItem="VMB-8n-2Bf" secondAttribute="trailing" constant="18" id="wLq-xC-jI7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ElH-hm-xD1"/>
                     </view>
@@ -463,6 +483,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="L9B-LQ-4UY"/>
-        <segue reference="XHB-4N-rBT"/>
+        <segue reference="nRI-Fu-9mh"/>
+        <segue reference="B2b-Rj-fxI"/>
     </inferredMetricsTieBreakers>
 </document>

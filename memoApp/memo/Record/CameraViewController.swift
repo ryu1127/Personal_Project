@@ -7,6 +7,8 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     var session = AVCaptureSession()
     var photoOutput = AVCapturePhotoOutput()
     let notification = NotificationCenter.default
+    
+    var segueImage : UIImage?
     //캡쳐델리게이트 설정
     func photoOutput(_ output: AVCapturePhotoOutput,
                      didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?,
@@ -20,6 +22,15 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         if let data = photoData {
             if let stillImage = UIImage(data: data) {
                 UIImageWriteToSavedPhotosAlbum(stillImage,self,nil,nil)
+                segueImage = stillImage
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "captureSegue"{
+            if let destination = segue.destination as? RecordViewController{
+                destination.imageForSegue = segueImage
             }
         }
     }
