@@ -88,17 +88,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBy-7m-4my">
-                                <rect key="frame" x="165" y="596" width="44" height="42"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
-                                <state key="normal" title="취소">
-                                    <color key="titleColor" red="0.99607473611831665" green="0.99220293760299683" blue="0.99199241399765015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="49e-Tb-3d3" kind="show" id="L9B-LQ-4UY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcz-SG-Z1R">
                                 <rect key="frame" x="157" y="328" width="61" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -169,6 +158,17 @@
                                 <rect key="frame" x="16" y="31" width="343" height="259"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBy-7m-4my">
+                                <rect key="frame" x="165" y="605" width="44" height="42"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="25"/>
+                                <state key="normal" title="취소">
+                                    <color key="titleColor" red="0.99607473611831665" green="0.99220293760299683" blue="0.99199241399765015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="show" id="L9B-LQ-4UY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.84715675103205079" blue="0.2180700212034925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -267,6 +267,11 @@
                                     <action selector="takePhoto:" destination="aRh-Q7-GRh" eventType="touchUpInside" id="DIs-zI-2ig"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJA-5W-mYM">
+                                <rect key="frame" x="273" y="25" width="90" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt1-rk-M7I">
                                 <rect key="frame" x="34" y="585" width="38" height="53"/>
                                 <state key="normal" image="Back"/>
@@ -274,8 +279,17 @@
                                     <segue destination="dwH-Dd-IIL" kind="show" identifier="captureSegue" id="B2b-Rj-fxI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0c-lm-8fu">
+                                <rect key="frame" x="273" y="26" width="90" height="127"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="imageClick:" destination="aRh-Q7-GRh" eventType="touchUpInside" id="iFd-z7-RAe"/>
+                                    <segue destination="LrK-HZ-azP" kind="show" id="Y2E-jo-mT6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="HDF-pH-0LP" firstAttribute="bottom" secondItem="8M0-xe-Goa" secondAttribute="bottom" constant="10" id="FCn-kC-ykx"/>
                             <constraint firstItem="HDF-pH-0LP" firstAttribute="bottom" secondItem="Wt1-rk-M7I" secondAttribute="bottom" constant="29" id="bV4-MP-lTj"/>
@@ -285,12 +299,46 @@
                         <viewLayoutGuide key="safeArea" id="HDF-pH-0LP"/>
                     </view>
                     <connections>
+                        <outlet property="capturedImage" destination="hJA-5W-mYM" id="Meu-qM-RLm"/>
+                        <outlet property="previewImage" destination="q0c-lm-8fu" id="7yl-AF-gVF"/>
                         <outlet property="previewView" destination="jAa-cc-03F" id="NSW-w7-Twi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ged-0Y-Xk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2621.5999999999999" y="-322.48875562218893"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="CHV-hk-A6o">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MXg-0N-YKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="LrK-HZ-azP" customClass="PreviewViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qfh-4Z-0aa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="otI-qp-Xsi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAQ-bs-4CO">
+                                <rect key="frame" x="16" y="38" width="38" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Back"/>
+                                <connections>
+                                    <segue destination="aRh-Q7-GRh" kind="show" id="Xx6-Vk-Rgf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="pBX-fU-nhm"/>
+                    </view>
+                    <connections>
+                        <outlet property="previewImage" destination="otI-qp-Xsi" id="Pex-cH-BGn"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3492" y="-321"/>
         </scene>
         <!--History-->
         <scene sceneID="roJ-y9-4PL">
@@ -484,6 +532,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="L9B-LQ-4UY"/>
         <segue reference="nRI-Fu-9mh"/>
+        <segue reference="Xx6-Vk-Rgf"/>
         <segue reference="B2b-Rj-fxI"/>
     </inferredMetricsTieBreakers>
 </document>
