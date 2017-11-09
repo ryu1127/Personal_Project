@@ -306,7 +306,7 @@
                             <items>
                                 <navigationItem title="History" id="B7e-Va-Fh9">
                                     <barButtonItem key="leftBarButtonItem" style="plain" id="n3p-sU-tWC">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hFP-U7-z9O">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hFP-U7-z9O">
                                             <rect key="frame" x="16" y="7" width="34" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Back"/>
@@ -484,6 +484,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="L9B-LQ-4UY"/>
         <segue reference="nRI-Fu-9mh"/>
-        <segue reference="B2b-Rj-fxI"/>
+        <segue reference="UaD-Ku-yLh"/>
     </inferredMetricsTieBreakers>
 </document>
