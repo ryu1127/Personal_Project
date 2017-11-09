@@ -1,18 +1,13 @@
 import UIKit
 import AVFoundation
-import QuartzCore
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
-    @IBOutlet weak var previewImage: UIButton!
-    @IBOutlet weak var capturedImage: UIImageView!
     @IBOutlet weak var previewView: UIView!
-    @IBAction func imageClick(_ sender: Any) {
-    }
-    
     var session = AVCaptureSession()
     var photoOutput = AVCapturePhotoOutput()
     let notification = NotificationCenter.default
+    
     var segueImage : UIImage?
     //캡쳐델리게이트 설정
     func photoOutput(_ output: AVCapturePhotoOutput,
@@ -30,7 +25,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                 UIImageWriteToSavedPhotosAlbum(stillImage,self,nil,nil)
                 //세그로 이미지를 전달하기 위해서 stillImage를 받아와서 segueImage에 저장
                 segueImage = stillImage
-                capturedImage.image = stillImage
             }
         }
     }
@@ -43,9 +37,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         if segue.identifier == "captureSegue"{
             //destination은 recordViewController이다.
             if let destination = segue.destination as? RecordViewController{
-                destination.imageForSegue = segueImage
-            }
-            if let destination = segue.destination as? PreviewViewController{
                 destination.imageForSegue = segueImage
             }
         }
@@ -92,9 +83,6 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        capturedImage.layer.cornerRadius=20
-        capturedImage.layer.masksToBounds = true
-        capturedImage.layer.borderWidth=2.0
         if session.isRunning{
             return
         }

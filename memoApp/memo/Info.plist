@@ -34,8 +34,6 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>사진을 저장합니다!</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
