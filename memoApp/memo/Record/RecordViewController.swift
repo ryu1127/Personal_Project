@@ -9,7 +9,7 @@ class RecordViewController: UIViewController {
     var lati:Double?
     var longi:Double?
     
-    let imagePicker = UIImagePickerController()
+    //segue를 통해 받은 이미지 저장할 변수
     var imageForSegue : UIImage?
     
     
@@ -20,6 +20,7 @@ class RecordViewController: UIViewController {
             longitude.text = String(format:"%.4f",longit)
         }
         if imageForSegue != nil{
+            //받은 이미지가 nil값이 아니라면 받아와서 이미지 뷰를 변환
             imageViewSegue.image = imageForSegue
         }
     }

@@ -21,14 +21,21 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             previewPhotoSampleBuffer: previewPhotoSampleBuffer)
         if let data = photoData {
             if let stillImage = UIImage(data: data) {
+                //이미지를 앨범에 저장
                 UIImageWriteToSavedPhotosAlbum(stillImage,self,nil,nil)
+                //세그로 이미지를 전달하기 위해서 stillImage를 받아와서 segueImage에 저장
                 segueImage = stillImage
             }
         }
     }
-    
+    //세그 전달을 위한 prepare 작업
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //captureSegue는 촬영한 후 뒤로가기 버튼을 눌렀을때 작동할 함수
+        // ***** 임시 함수로써 데이터 베이스 연동 후엔 데이터로써 전달 *****//
+        
+        // ***** 여기 사진 편집 등 팝업창 관련해서 개발 해야함 *****//
         if segue.identifier == "captureSegue"{
+            //destination은 recordViewController이다.
             if let destination = segue.destination as? RecordViewController{
                 destination.imageForSegue = segueImage
             }
