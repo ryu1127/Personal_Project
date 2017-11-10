@@ -8,4 +8,11 @@ target 'memo' do
   # Pods for memo
 
 pod ‘Firebase/Core’
+pod ‘Firebase/Auth’
+pod ‘GoogleSignIn’
+
+pod 'FBSDKCoreKit'
+pod 'FBSDKShareKit'
+pod 'FBSDKLoginKit'
+
 end
