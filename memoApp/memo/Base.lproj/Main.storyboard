@@ -274,6 +274,10 @@
                                     <segue destination="dwH-Dd-IIL" kind="show" identifier="captureSegue" id="B2b-Rj-fxI"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6U4-SM-Pxe">
+                                <rect key="frame" x="261" y="40" width="98" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -285,6 +289,7 @@
                         <viewLayoutGuide key="safeArea" id="HDF-pH-0LP"/>
                     </view>
                     <connections>
+                        <outlet property="capturedImage" destination="6U4-SM-Pxe" id="8Rb-Fb-RDY"/>
                         <outlet property="previewView" destination="jAa-cc-03F" id="NSW-w7-Twi"/>
                     </connections>
                 </viewController>
@@ -484,6 +489,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="L9B-LQ-4UY"/>
         <segue reference="Y9F-VW-rSD"/>
-        <segue reference="XHB-4N-rBT"/>
+        <segue reference="B2b-Rj-fxI"/>
     </inferredMetricsTieBreakers>
 </document>

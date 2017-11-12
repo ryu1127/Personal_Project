@@ -1,9 +1,11 @@
 import UIKit
 import AVFoundation
+import QuartzCore
 
 class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
     @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var capturedImage: UIImageView!
     var session = AVCaptureSession()
     var photoOutput = AVCapturePhotoOutput()
     let notification = NotificationCenter.default
@@ -25,6 +27,7 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
                 UIImageWriteToSavedPhotosAlbum(stillImage,self,nil,nil)
                 //세그로 이미지를 전달하기 위해서 stillImage를 받아와서 segueImage에 저장
                 segueImage = stillImage
+                capturedImage.image = stillImage
             }
         }
     }
@@ -83,6 +86,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        capturedImage.layer.cornerRadius=20
+        capturedImage.layer.masksToBounds = true
+        capturedImage.layer.borderWidth=2.0
         if session.isRunning{
             return
         }
