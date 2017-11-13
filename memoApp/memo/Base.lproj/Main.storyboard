@@ -33,20 +33,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rjy-FZ-gkd">
-                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93G-hu-qWM">
-                                <rect key="frame" x="305" y="40" width="50" height="67"/>
+                                <rect key="frame" x="293" y="40" width="62" height="63"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="46"/>
-                                <state key="normal" title="📡"/>
+                                <state key="normal" image="locate"/>
                                 <connections>
                                     <action selector="tapTrackButton:" destination="9pv-A4-QxB" eventType="touchUpInside" id="L9Z-hR-uPT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7W-x2-6u3">
-                                <rect key="frame" x="143" y="493" width="88" height="110"/>
+                                <rect key="frame" x="104" y="554" width="166" height="98"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="82"/>
-                                <state key="normal" title="📝">
+                                <state key="normal" image="startwrite">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -99,28 +99,15 @@
                                     <segue destination="49e-Tb-3d3" kind="show" id="L9B-LQ-4UY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcz-SG-Z1R">
-                                <rect key="frame" x="157" y="328" width="61" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcz-SG-Z1R">
+                                <rect key="frame" x="146" y="239" width="84" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="48"/>
-                                <state key="normal" title="📷">
+                                <state key="normal" image="fromCam">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="1" green="0.84873241186141968" blue="0.21984976530075073" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="aRh-Q7-GRh" kind="show" id="Oqo-Xw-cGt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXH-Fh-eUL">
-                                <rect key="frame" x="152" y="401" width="71" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="48"/>
-                                <state key="normal" title="🖼">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" red="1" green="0.84873241186141968" blue="0.21984976530075073" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="4ks-yD-L5A" kind="show" id="xye-Lm-MUH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Longitude" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icz-iH-QD1">
@@ -137,40 +124,62 @@
                                 <color key="textColor" red="0.2017122209072113" green="0.45807075500488281" blue="0.6906619668006897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="사진을" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHl-Aj-6RC">
-                                <rect key="frame" x="155" y="125" width="64" height="21"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="MgI-D2-3QF">
+                                <rect key="frame" x="168" y="436" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
-                                <nil key="textColor"/>
+                                <color key="pageIndicatorTintColor" red="0.80784313725490198" green="0.83137254901960778" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.27942702174186707" green="0.67248731851577759" blue="0.97995179891586304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTZ-rw-4EF">
+                                <rect key="frame" x="105" y="548" width="166" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="select"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="사진을 찍을건가요, " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO9-zh-APv">
+                                <rect key="frame" x="25" y="79" width="191" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <color key="textColor" red="0.28627450980392155" green="0.31372549019607843" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="찍을건가요," textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2r-9I-2P5">
-                                <rect key="frame" x="133" y="154" width="109" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="가져올 건가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="be9-t2-p3M">
+                                <rect key="frame" x="25" y="111" width="191" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <color key="textColor" red="0.28627450980392155" green="0.31372549019607843" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="가져올건가요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfx-nd-ntL">
-                                <rect key="frame" x="128" y="183" width="121" height="27"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xqa-wa-igL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5AD-p7-Ice">
-                                <rect key="frame" x="128" y="213" width="121" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJH-jp-LPQ">
-                                <rect key="frame" x="16" y="31" width="343" height="259"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ety-8T-sxa">
+                                        <rect key="frame" x="15" y="35" width="20" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="Back Arrow"/>
+                                        <connections>
+                                            <segue destination="9pv-A4-QxB" kind="show" id="KbK-j9-1ab"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="so6-LY-2LS">
+                                <rect key="frame" x="134" y="175" width="106" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXH-Fh-eUL">
+                                <rect key="frame" x="146" y="344" width="82" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="fromAlbum">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4ks-yD-L5A" kind="show" id="xye-Lm-MUH"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.84715675103205079" blue="0.2180700212034925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EkF-Q5-6H8" firstAttribute="bottom" secondItem="xBy-7m-4my" secondAttribute="bottom" constant="60" id="6aL-YZ-R3U"/>
                             <constraint firstItem="xBy-7m-4my" firstAttribute="centerX" secondItem="vtF-4k-bGc" secondAttribute="centerX" id="bxO-j0-p8s"/>
@@ -178,9 +187,7 @@
                         <viewLayoutGuide key="safeArea" id="EkF-Q5-6H8"/>
                     </view>
                     <connections>
-                        <outlet property="Latitude" destination="Hma-7p-yq0" id="nZY-gk-gmu"/>
-                        <outlet property="Longitude" destination="icz-iH-QD1" id="gIT-Zb-vlI"/>
-                        <outlet property="imageViewSegue" destination="jJH-jp-LPQ" id="b1d-TK-Sid"/>
+                        <outlet property="imageViewSegue" destination="so6-LY-2LS" id="yW4-qO-Fc0"/>
                         <outlet property="latitude" destination="Hma-7p-yq0" id="CXv-JX-7KX"/>
                         <outlet property="longitude" destination="icz-iH-QD1" id="Xw0-dy-Ovt"/>
                     </connections>
@@ -260,29 +267,29 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8M0-xe-Goa">
-                                <rect key="frame" x="149.5" y="561" width="75" height="96"/>
+                                <rect key="frame" x="150" y="573" width="75" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
-                                <state key="normal" title="📸"/>
+                                <state key="normal" image="shutter"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="aRh-Q7-GRh" eventType="touchUpInside" id="DIs-zI-2ig"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt1-rk-M7I">
-                                <rect key="frame" x="34" y="585" width="38" height="53"/>
-                                <state key="normal" image="Back"/>
+                                <rect key="frame" x="34" y="582" width="61" height="61"/>
+                                <state key="normal" image="camback"/>
                                 <connections>
                                     <segue destination="dwH-Dd-IIL" kind="show" identifier="captureSegue" id="B2b-Rj-fxI"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6U4-SM-Pxe">
-                                <rect key="frame" x="261" y="40" width="98" height="128"/>
+                                <rect key="frame" x="270" y="35" width="89" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HDF-pH-0LP" firstAttribute="bottom" secondItem="8M0-xe-Goa" secondAttribute="bottom" constant="10" id="FCn-kC-ykx"/>
-                            <constraint firstItem="HDF-pH-0LP" firstAttribute="bottom" secondItem="Wt1-rk-M7I" secondAttribute="bottom" constant="29" id="bV4-MP-lTj"/>
+                            <constraint firstItem="HDF-pH-0LP" firstAttribute="bottom" secondItem="Wt1-rk-M7I" secondAttribute="bottom" constant="24" id="bV4-MP-lTj"/>
                             <constraint firstItem="Wt1-rk-M7I" firstAttribute="leading" secondItem="HDF-pH-0LP" secondAttribute="leading" constant="34" id="gro-sj-Unf"/>
                             <constraint firstItem="8M0-xe-Goa" firstAttribute="centerX" secondItem="MXf-C7-JJt" secondAttribute="centerX" id="qjk-zi-JwF"/>
                         </constraints>
@@ -505,15 +512,23 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Back" width="38" height="53"/>
+        <image name="Back Arrow" width="20" height="21"/>
+        <image name="camback" width="61" height="61"/>
         <image name="friendsicon-2" width="30" height="29"/>
+        <image name="fromAlbum" width="126" height="93"/>
+        <image name="fromCam" width="126" height="99"/>
         <image name="historyicon-2" width="30" height="29"/>
+        <image name="locate" width="62" height="63"/>
         <image name="mapicon-2" width="30" height="29"/>
+        <image name="select" width="166" height="73"/>
         <image name="settingsicon-2" width="30" height="29"/>
+        <image name="shutter" width="75" height="75"/>
+        <image name="startwrite" width="166" height="73"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RFx-kY-gSQ"/>
+        <segue reference="L9B-LQ-4UY"/>
         <segue reference="Y9F-VW-rSD"/>
-        <segue reference="XHB-4N-rBT"/>
+        <segue reference="B2b-Rj-fxI"/>
+        <segue reference="KbK-j9-1ab"/>
     </inferredMetricsTieBreakers>
 </document>

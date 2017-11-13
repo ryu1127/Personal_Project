@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "recordicon-4.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "locate.png",
       "scale" : "2x"
     },
     {

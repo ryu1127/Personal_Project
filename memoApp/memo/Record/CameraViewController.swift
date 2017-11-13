@@ -86,9 +86,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        capturedImage.layer.cornerRadius=20
+        capturedImage.layer.cornerRadius=10
         capturedImage.layer.masksToBounds = true
-        capturedImage.layer.borderWidth=2.0
+        capturedImage.layer.borderWidth=0.0
         if session.isRunning{
             return
         }
