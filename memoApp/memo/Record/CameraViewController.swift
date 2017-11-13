@@ -39,9 +39,9 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         // ***** 여기 사진 편집 등 팝업창 관련해서 개발 해야함 *****//
         if segue.identifier == "captureSegue"{
             //destination은 recordViewController이다.
-            if let destination = segue.destination as? RecordViewController{
+            /*if let destination = segue.destination as? RecordViewController{
                 destination.imageForSegue = segueImage
-            }
+            }*/
         }
     }
     func setupInputOutput(){

@@ -10,7 +10,7 @@ class RecordViewController: UIViewController {
     var longi:Double?
     
     //segue를 통해 받은 이미지 저장할 변수
-    var imageForSegue : UIImage?
+    //var imageForSegue : UIImage?
     
     
     override func viewDidLoad() {
@@ -19,10 +19,10 @@ class RecordViewController: UIViewController {
             latitude.text = String(format:"%.4f",latit)
             longitude.text = String(format:"%.4f",longit)
         }
-        if imageForSegue != nil{
+       /* if imageForSegue != nil{
             //받은 이미지가 nil값이 아니라면 받아와서 이미지 뷰를 변환
             imageViewSegue.image = imageForSegue
-        }
+        }*/
     }
 
     override func didReceiveMemoryWarning() {

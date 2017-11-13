@@ -38,7 +38,7 @@ class AlbumViewController: UIViewController, UIImagePickerControllerDelegate, UI
     //앨범에서 선택한 이미지를 보내기 위한 segue 준비
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "imageSegue"{
-            if let destination = segue.destination as? RecordViewController{
+            if let destination = segue.destination as? CropperViewController{
                 destination.imageForSegue = imageForSegue
             }
         }
@@ -48,9 +48,9 @@ class AlbumViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         imageForSegue = imageView.image
         //이미지가 현재 전달 될 준비가 되어있다면
-        if imageForSegue != nil{
-            performSegue(withIdentifier: "imageSegue", sender: self)
-        }
+        //if imageForSegue != nil{
+        //    self.performSegue(withIdentifier: "imageSegue", sender: self)
+        //}
         
     }
 

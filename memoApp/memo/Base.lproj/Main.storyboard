@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BfW-hN-yk5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BfW-hN-yk5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -229,7 +229,7 @@
                                 <state key="normal" title="선택"/>
                                 <connections>
                                     <action selector="saveBtn:" destination="4ks-yD-L5A" eventType="touchUpInside" id="KmT-23-rRH"/>
-                                    <segue destination="dwH-Dd-IIL" kind="show" identifier="imageSegue" id="UaD-Ku-yLh"/>
+                                    <segue destination="YQ5-a3-rEW" kind="show" id="gK1-Ba-9hh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="snE-2J-rg2">
@@ -252,6 +252,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fya-3M-oo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2621.5999999999999" y="357.57121439280365"/>
+        </scene>
+        <!--Cropper View Controller-->
+        <scene sceneID="ugB-Td-oh6">
+            <objects>
+                <viewController id="YQ5-a3-rEW" customClass="CropperViewController" customModule="memo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vA0-uI-ub8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqy-AV-2g0">
+                                <rect key="frame" x="0.0" y="67" width="375" height="519"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xEf-o3-NOh">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="519"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xEf-o3-NOh" firstAttribute="centerY" secondItem="fqy-AV-2g0" secondAttribute="centerY" id="AwB-eB-9Hz"/>
+                                    <constraint firstItem="xEf-o3-NOh" firstAttribute="centerX" secondItem="fqy-AV-2g0" secondAttribute="centerX" id="Ecc-cm-bKz"/>
+                                    <constraint firstAttribute="bottom" secondItem="xEf-o3-NOh" secondAttribute="bottom" id="J0g-vj-Fne"/>
+                                    <constraint firstItem="xEf-o3-NOh" firstAttribute="top" secondItem="fqy-AV-2g0" secondAttribute="top" id="MRI-DH-mcG"/>
+                                    <constraint firstAttribute="trailing" secondItem="xEf-o3-NOh" secondAttribute="trailing" id="RUx-lG-Clf"/>
+                                    <constraint firstItem="xEf-o3-NOh" firstAttribute="leading" secondItem="fqy-AV-2g0" secondAttribute="leading" id="YoW-Oo-PTN"/>
+                                    <constraint firstAttribute="trailing" secondItem="xEf-o3-NOh" secondAttribute="trailing" id="ds6-DB-kbT"/>
+                                    <constraint firstAttribute="bottom" secondItem="xEf-o3-NOh" secondAttribute="bottom" id="f5k-lD-iCl"/>
+                                    <constraint firstItem="xEf-o3-NOh" firstAttribute="centerX" secondItem="fqy-AV-2g0" secondAttribute="centerX" id="fX3-Ue-1dc"/>
+                                    <constraint firstItem="xEf-o3-NOh" firstAttribute="leading" secondItem="fqy-AV-2g0" secondAttribute="leading" id="hXo-H1-GsE"/>
+                                    <constraint firstItem="xEf-o3-NOh" firstAttribute="top" secondItem="fqy-AV-2g0" secondAttribute="top" id="nEd-Ib-brQ"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEH-th-PGl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2G-BF-xCj">
+                                        <rect key="frame" x="-7" y="35" width="74" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="74" id="WAV-IC-ORv"/>
+                                        </constraints>
+                                        <state key="normal" image="White Back Arrow"/>
+                                        <connections>
+                                            <segue destination="4ks-yD-L5A" kind="show" id="Gw1-F9-N15"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.28627450980392155" green="0.31372549019607843" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="e2G-BF-xCj" firstAttribute="leading" secondItem="eEH-th-PGl" secondAttribute="leading" constant="-7" id="yYi-9z-hMs"/>
+                                    <constraint firstItem="e2G-BF-xCj" firstAttribute="top" secondItem="eEH-th-PGl" secondAttribute="top" constant="35" id="yi9-oE-K7s"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHH-7C-N5N">
+                                <rect key="frame" x="0.0" y="583" width="375" height="84"/>
+                                <state key="normal" image="cropit"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fqy-AV-2g0" firstAttribute="trailing" secondItem="eEH-th-PGl" secondAttribute="trailing" id="3iD-Q8-jId"/>
+                            <constraint firstItem="dHH-7C-N5N" firstAttribute="bottom" secondItem="drD-9q-lri" secondAttribute="bottom" id="75P-gn-i70"/>
+                            <constraint firstItem="fqy-AV-2g0" firstAttribute="trailing" secondItem="dHH-7C-N5N" secondAttribute="trailing" id="Eju-TT-cVg"/>
+                            <constraint firstItem="fqy-AV-2g0" firstAttribute="top" secondItem="drD-9q-lri" secondAttribute="top" constant="47" id="XQP-Rb-ly0"/>
+                            <constraint firstItem="fqy-AV-2g0" firstAttribute="leading" secondItem="dHH-7C-N5N" secondAttribute="leading" id="hSc-yY-6gW"/>
+                            <constraint firstItem="fqy-AV-2g0" firstAttribute="leading" secondItem="eEH-th-PGl" secondAttribute="leading" id="jen-WU-xRm"/>
+                            <constraint firstItem="eEH-th-PGl" firstAttribute="top" secondItem="vA0-uI-ub8" secondAttribute="top" id="n4y-Jx-597"/>
+                            <constraint firstAttribute="bottom" secondItem="eEH-th-PGl" secondAttribute="bottom" constant="597" id="qsF-cy-CM0"/>
+                            <constraint firstItem="drD-9q-lri" firstAttribute="bottom" secondItem="fqy-AV-2g0" secondAttribute="bottom" constant="81" id="qwb-dC-p1y"/>
+                            <constraint firstItem="fqy-AV-2g0" firstAttribute="leading" secondItem="vA0-uI-ub8" secondAttribute="leading" id="wiu-Xd-Dyz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="drD-9q-lri"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="xEf-o3-NOh" id="wVr-kc-a38"/>
+                        <outlet property="scrollView" destination="fqy-AV-2g0" id="Ak7-O7-H2m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9j-Af-1iY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3735" y="0.0"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="Jpm-Fv-gF6">
@@ -513,7 +591,9 @@
     </scenes>
     <resources>
         <image name="Back Arrow" width="20" height="21"/>
+        <image name="White Back Arrow" width="20" height="21"/>
         <image name="camback" width="61" height="61"/>
+        <image name="cropit" width="375" height="84"/>
         <image name="friendsicon-2" width="30" height="29"/>
         <image name="fromAlbum" width="126" height="93"/>
         <image name="fromCam" width="126" height="99"/>
@@ -528,6 +608,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="L9B-LQ-4UY"/>
         <segue reference="Y9F-VW-rSD"/>
+        <segue reference="Gw1-F9-N15"/>
         <segue reference="B2b-Rj-fxI"/>
         <segue reference="KbK-j9-1ab"/>
     </inferredMetricsTieBreakers>
