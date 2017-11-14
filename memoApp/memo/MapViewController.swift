@@ -60,7 +60,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     //세그 보낼 준비
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var recordController = segue.destination as! RecordViewController
+        let recordController = segue.destination as! RecordViewController
         recordController.lati = lati
         recordController.longi = longi
     }

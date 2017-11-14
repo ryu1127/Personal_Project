@@ -48,9 +48,9 @@ class AlbumViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         imageForSegue = imageView.image
         //이미지가 현재 전달 될 준비가 되어있다면
-        //if imageForSegue != nil{
-        //    self.performSegue(withIdentifier: "imageSegue", sender: self)
-        //}
+        if imageForSegue != nil{
+            self.performSegue(withIdentifier: "imageSegue", sender: self)
+        }
         
     }
 
