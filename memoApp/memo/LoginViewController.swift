@@ -55,7 +55,9 @@ class LoginViewController: UIViewController/* , GIDSignInUIDelegate*/, FBSDKLogi
             print(error)
             return
         }
+        performSegue(withIdentifier: "facebookLogin", sender: self)
         print("Successfully logged in with facebook...")
+        
     }
 
     override func didReceiveMemoryWarning() {

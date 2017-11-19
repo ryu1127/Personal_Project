@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		42958BE11FB5EEB500B66B77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42958BE01FB5EEB500B66B77 /* GoogleService-Info.plist */; };
+		42C301A11FBC01E700F4E18B /* CropperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C301A01FBC01E700F4E18B /* CropperViewController.swift */; };
 		42C4804C1FB5F0AC00048BB6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C4804B1FB5F0AC00048BB6 /* LoginViewController.swift */; };
 		62023F751F6A54B400DC81E4 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62023F741F6A54B400DC81E4 /* RecordViewController.swift */; };
 		621951D11F93C55F00DCC1AA /* HistoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621951D01F93C55F00DCC1AA /* HistoryViewCell.swift */; };
@@ -31,6 +32,7 @@
 		3E7A342FA35185723F44F5DC /* Pods-memo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-memo/Pods-memo.debug.xcconfig"; sourceTree = "<group>"; };
 		4270859A1FB5FE6F00A68AD7 /* memo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = memo.entitlements; sourceTree = "<group>"; };
 		42958BE01FB5EEB500B66B77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		42C301A01FBC01E700F4E18B /* CropperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropperViewController.swift; sourceTree = "<group>"; };
 		42C4804B1FB5F0AC00048BB6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5956A4A23A05224E7DFC1D45 /* Pods-memo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-memo.release.xcconfig"; path = "Pods/Target Support Files/Pods-memo/Pods-memo.release.xcconfig"; sourceTree = "<group>"; };
 		62023F741F6A54B400DC81E4 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		4216978E1F7679F7006CB18D /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				42C301A01FBC01E700F4E18B /* CropperViewController.swift */,
 				62F7A1891F84FD5500CD8E46 /* AlbumViewController.swift */,
 				6249FBD61FA9E6E700B87BCA /* CameraViewController.swift */,
 				62023F741F6A54B400DC81E4 /* RecordViewController.swift */,
@@ -299,6 +302,7 @@
 				621951DB1F941CC800DCC1AA /* DetailViewController.swift in Sources */,
 				62023F751F6A54B400DC81E4 /* RecordViewController.swift in Sources */,
 				6249FBD71FA9E6E700B87BCA /* CameraViewController.swift in Sources */,
+				42C301A11FBC01E700F4E18B /* CropperViewController.swift in Sources */,
 				62F7A18A1F84FD5500CD8E46 /* AlbumViewController.swift in Sources */,
 				621951D51F93D7F000DCC1AA /* Journal.swift in Sources */,
 				621951D91F93E13600DCC1AA /* HistoryTableViewController.swift in Sources */,
