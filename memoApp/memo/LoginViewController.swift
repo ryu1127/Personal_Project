@@ -55,6 +55,8 @@ class LoginViewController: UIViewController/* , GIDSignInUIDelegate*/, FBSDKLogi
             print(error)
             return
         }
+        //segue를 만들어서 로그인 끝나고 다시 돌아올때 바로 다음화면으로 넘어갈 수 있게 만듬
+
         performSegue(withIdentifier: "facebookLogin", sender: self)
         print("Successfully logged in with facebook...")
         
