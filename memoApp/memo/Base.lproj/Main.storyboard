@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="rjy-FZ-gkd">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="93G-hu-qWM">
                                 <rect key="frame" x="293" y="40" width="62" height="63"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7W-x2-6u3">
-                                <rect key="frame" x="104" y="554" width="166" height="98"/>
+                                <rect key="frame" x="104" y="505" width="166" height="98"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="82"/>
                                 <state key="normal" image="startwrite">
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -595,6 +595,6 @@
         <segue reference="Y9F-VW-rSD"/>
         <segue reference="Gw1-F9-N15"/>
         <segue reference="B2b-Rj-fxI"/>
-        <segue reference="KbK-j9-1ab"/>
+        <segue reference="u7Y-xg-7CH"/>
     </inferredMetricsTieBreakers>
 </document>

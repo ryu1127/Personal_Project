@@ -61,6 +61,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 //    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
 //        return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
 //    }
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError?){
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        return
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the applicaion is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

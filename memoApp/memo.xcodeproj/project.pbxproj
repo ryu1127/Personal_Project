@@ -115,6 +115,7 @@
 				4216978E1F7679F7006CB18D /* Record */,
 				621951DC1F941CEC00DCC1AA /* History */,
 				62DDAFA01F695C17005AB61F /* AppDelegate.swift */,
+				42C4804B1FB5F0AC00048BB6 /* LoginViewController.swift */,
 				62DDAFA21F695C17005AB61F /* MapViewController.swift */,
 				62DDAFA61F695C17005AB61F /* Main.storyboard */,
 				62DDAFA91F695C17005AB61F /* Assets.xcassets */,
@@ -123,7 +124,6 @@
 				62DDAFB81F695EBC005AB61F /* FriendsViewController.swift */,
 				62DDAFAE1F695C17005AB61F /* Info.plist */,
 				62DDAFBA1F696D6A005AB61F /* SettingsViewController.swift */,
-				42C4804B1FB5F0AC00048BB6 /* LoginViewController.swift */,
 			);
 			path = memo;
 			sourceTree = "<group>";
