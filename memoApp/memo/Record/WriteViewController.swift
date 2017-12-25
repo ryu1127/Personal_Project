@@ -8,10 +8,17 @@
 
 import UIKit
 
-class WriteViewController: UIViewController {
-
+class WriteViewController: UIViewController, UITextViewDelegate{
+    var imageForSegue : UIImage?
+    
+    @IBOutlet weak var textView: UITextView!
+    var originalFrame:CGRect?
+    @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if imageForSegue != nil{
+            imageView.image = imageForSegue
+        }
     }
 
     override func didReceiveMemoryWarning() {

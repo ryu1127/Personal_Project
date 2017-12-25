@@ -9,9 +9,18 @@
 import UIKit
 import CoreLocation
 import MapKit
+import Firebase
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
+    @IBAction func logoutBtn(_ sender: Any) {
+        do{
+            try FIRAuth.auth()?.signOut()
+        }catch let logoutError{
+            print(logoutError)
+        }
+    }
+    
     @IBOutlet weak var memoMap: MKMapView!
     @IBOutlet weak var trackingButton: UIButton!
     var startLocation : CLLocation!
@@ -29,9 +38,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //위도, 경도 변수
     var lati: Double?
     var longi: Double?
-
     
+
     override func viewDidLoad() {
+
         super.viewDidLoad()
         //위치 사용 허가를 위한 요청 날리기
         locationManager.requestWhenInUseAuthorization()
@@ -60,9 +70,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     //세그 보낼 준비
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let recordController = segue.destination as! RecordViewController
-        recordController.lati = lati
-        recordController.longi = longi
+        if segue.identifier == "segue"{
+            let recordController = segue.destination as! RecordViewController
+            recordController.lati = lati
+            recordController.longi = longi
+        }
+        else if segue.identifier == "logout"{
+            let destination = segue.destination as! LoginViewController
+        }
     }
     
     //Record버튼을 눌렀을 때 세그를 실행한다. ( RecordViewController로 위도 경도를 전달을 위함 )
@@ -108,6 +123,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func locationManager(manager: CLLocationManager, didFailWithError error: Error){
         print("error:\(error.localizedDescription)")
     }
+    
 
     
     

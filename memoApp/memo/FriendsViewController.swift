@@ -7,15 +7,44 @@
 //
 
 import UIKit
+import Firebase
 
-class FriendsViewController: UIViewController {
+class FriendsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        loadUserInfo()
+        
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    func loadUserInfo(){
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        FIRDatabase.database().reference().child("users").child(uid!).observeSingleEvent(of: .value , with: {(snapshot) in
+            if let dictionary = snapshot.value as? [String:AnyObject]{
+                let name = dictionary["name"] as? String
+                print(name)
+            }
 
+
+        })
+
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

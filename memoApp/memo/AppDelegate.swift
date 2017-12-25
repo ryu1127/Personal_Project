@@ -8,9 +8,9 @@
 
 import UIKit
 import Firebase
-import GoogleSignIn
-import FBSDKCoreKit
 import FBSDKLoginKit
+import FBSDKCoreKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{

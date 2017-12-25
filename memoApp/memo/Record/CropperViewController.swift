@@ -9,16 +9,23 @@
 import UIKit
 class CropperViewController: UIViewController, UIScrollViewDelegate {
     var imageForSegue : UIImage?
+    var image : UIImage?
+    
     @IBOutlet var scrollView: UIScrollView! {
         didSet {
             scrollView.delegate = self
-            scrollView.minimumZoomScale = 1.0
-            scrollView.maximumZoomScale = 10.0
+            scrollView.minimumZoomScale = 0.5
+            scrollView.maximumZoomScale = 5.0
         }
     }
     @IBOutlet var imageView: UIImageView!
 
-    @IBOutlet weak var CropAreaView: CropAreaView!
+    @IBOutlet weak var CropAreaView: CropAreaView!{
+        didSet {
+            self.CropAreaView.layer.borderWidth = 2
+            self.CropAreaView.layer.borderColor = UIColor.init(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 0.7).cgColor
+        }
+    }
     
     var cropArea:CGRect{
         get{
@@ -46,8 +53,10 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func cropBtn(_ sender: Any) {
+        //cropArea를 croppedCGImage로 이미지 만듬
         let croppedCGImage = imageView.image?.cgImage?.cropping(to: cropArea)
         let croppedImage = UIImage(cgImage: croppedCGImage!)
+        image = croppedImage
         imageView.image = croppedImage
         scrollView.zoomScale = 1
     }
@@ -55,10 +64,16 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        
-        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "imageSegue"{
+            if let destination = segue.destination as? WriteViewController{
+                destination.imageForSegue = image
+            }
+        }
     }
 }
+
 
 extension UIImageView{
     func imageFrame()->CGRect{

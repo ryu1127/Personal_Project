@@ -7,20 +7,55 @@
 //
 
 import UIKit
+import Firebase
 
 class HistoryTableViewController: UITableViewController {
     let journals = [Journal(latitude:0.0,longitude:0.0,name:"Journal1",contents:"first content"),
                     Journal(latitude:0.0,longitude:0.0,name:"Journal2",contents:"second content"),
                     Journal(latitude:0.0,longitude:0.0,name:"Journal3",contents:"third content")]
+    
+    
+    var users = [User]()
+    
     override func viewDidLoad() {
+        fetchUser()
         super.viewDidLoad()
-       
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+
+        
+        
     }
+    
+    func fetchUser(){
+        FIRDatabase.database().reference().child("users").observe(.childAdded, with: {(snapshot) in
+            print("enter to fetchUser")
+            if let dictionary = snapshot.value as? [String:Any]{
+                print("dictionary : \(dictionary)")
+                let user = User()
+                user.setValuesForKeys(dictionary)
+                self.users.append(user)
+                
+//                user.name = dictionary["name"] as! String
+//                print("user : \(user)")
+//                print("name : \(user.name)")
+                
+                let queue = DispatchQueue(label: "label")
+                queue.async {
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+            
+//                print(snapshot)
+            }, withCancel: nil)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,14 +71,16 @@ class HistoryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return journals.count
+        return users.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell", for: indexPath) as! HistoryViewCell
 
-        cell.nameLabel.text = String(describing: journals[indexPath.row])
+        let user = users[indexPath.row]
+        
+        cell.nameLabel.text = user.name!
         
         // Configure the cell...
 
