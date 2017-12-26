@@ -19,8 +19,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     //phone number
     @IBOutlet weak var numberTextField: UITextField!
-    //PIN for find user info
-    @IBOutlet weak var pinTextField: UITextField!
     //register Button
     @IBOutlet weak var registerBtn: UIButton!
     let ref = FIRDatabase.database().reference(fromURL: "https://keep-c4c6e.firebaseio.com/")
@@ -33,7 +31,7 @@ class RegisterViewController: UIViewController {
     }
     
     func handleRegister(){
-        guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text, let number = numberTextField.text, let pin = pinTextField.text else {
+        guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text, let number = numberTextField.text else {
             print("Form is not valid")
             return
         }
@@ -53,18 +51,23 @@ class RegisterViewController: UIViewController {
             
             //Save user info in database
             let usersReference = self.ref.child("users").child(uid)
-            let values = ["name":name, "email":email,"number":number, "pin":pin]
+            let values = ["name":name, "email":email,"number":number]
             usersReference.updateChildValues(values, withCompletionBlock: {(err,ref) in
                 if err != nil {
                     print(err)
+                    return
                 }
                 let successAlertController = UIAlertController(title: "Success", message: "성공적으로 가입되었습니다.", preferredStyle: UIAlertControllerStyle.alert)
-                let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler : nil)
+                let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler : {(err) in
+                    self.performSegue(withIdentifier: "back", sender: self)
+                })
                 successAlertController.addAction(okAction)
                 self.present(successAlertController,animated: true,completion: nil)
                 print("saved user successfully into Firebase DB")
             })
+
         })
+
     }
     
     //Keyboard end

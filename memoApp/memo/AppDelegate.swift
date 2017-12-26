@@ -8,9 +8,9 @@
 
 import UIKit
 import Firebase
-import FBSDKLoginKit
-import FBSDKCoreKit
 import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -30,8 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
+        // IQKeyboardManager 는 메모작성시 키보드 관련 매니저 api
+        IQKeyboardManager.sharedManager().enable = true
+        IQKeyboardManager.sharedManager().enableDebugging = true
+        IQKeyboardManager.sharedManager().toolbarDoneBarButtonItemImage = UIImage(named: "Done")
+        IQKeyboardManager.sharedManager().toolbarTintColor = .white
+        IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
         //firebaseApp 객체 구성
         FIRApp.configure()
         

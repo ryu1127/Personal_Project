@@ -7,9 +7,13 @@
 //
 
 import UIKit
-class CropperViewController: UIViewController, UIScrollViewDelegate {
+import CoreLocation
+class CropperViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerDelegate {
     var imageForSegue : UIImage?
     var image : UIImage?
+    var lati : Double?
+    var longi : Double?
+    var locationManager = CLLocationManager()
     
     @IBOutlet var scrollView: UIScrollView! {
         didSet {
@@ -26,7 +30,7 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
             self.CropAreaView.layer.borderColor = UIColor.init(red:222/255.0, green:225/255.0, blue:227/255.0, alpha: 0.7).cgColor
         }
     }
-    
+    //scrollView, CropAreaView, imageView 들의 관계로 잘라낼 부분 위치 정함
     var cropArea:CGRect{
         get{
             let factor = imageView.image!.size.width/view.frame.width
@@ -59,6 +63,10 @@ class CropperViewController: UIViewController, UIScrollViewDelegate {
         image = croppedImage
         imageView.image = croppedImage
         scrollView.zoomScale = 1
+        
+        lati = locationManager.location?.coordinate.latitude
+        longi = locationManager.location?.coordinate.longitude
+        print(lati,longi)
     }
 
     override func didReceiveMemoryWarning() {

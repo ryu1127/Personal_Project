@@ -6,9 +6,13 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
 
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var capturedImage: UIImageView!
+    
     var session = AVCaptureSession()
     var photoOutput = AVCapturePhotoOutput()
     let notification = NotificationCenter.default
+    
+    var lati:Double?
+    var longi:Double?
     
     var segueImage : UIImage?
     //캡쳐델리게이트 설정
@@ -31,17 +35,17 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             }
         }
     }
+
     //세그 전달을 위한 prepare 작업
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //captureSegue는 촬영한 후 뒤로가기 버튼을 눌렀을때 작동할 함수
         // ***** 임시 함수로써 데이터 베이스 연동 후엔 데이터로써 전달 *****//
         
         // ***** 여기 사진 편집 등 팝업창 관련해서 개발 해야함 *****//
-        if segue.identifier == "captureSegue"{
-            //destination은 recordViewController이다.
-            /*if let destination = segue.destination as? RecordViewController{
+        if segue.identifier == "tapImage"{
+            if let destination = segue.destination as? CropperViewController{
                 destination.imageForSegue = segueImage
-            }*/
+            }
         }
     }
     func setupInputOutput(){
@@ -84,8 +88,16 @@ class CameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         captureSetting.isHighResolutionPhotoEnabled = false
         photoOutput.capturePhoto(with: captureSetting, delegate: self as! AVCapturePhotoCaptureDelegate)
     }
+    @IBAction func tapImage(_ sender: Any) {
+        if segueImage != nil{
+            self.performSegue(withIdentifier: "tapImage", sender: self)
+        }
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(lati ?? "no data",longi ?? "no data")
         capturedImage.layer.cornerRadius=10
         capturedImage.layer.masksToBounds = true
         capturedImage.layer.borderWidth=0.0

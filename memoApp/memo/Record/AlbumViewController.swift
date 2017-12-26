@@ -4,6 +4,8 @@ class AlbumViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var imageView: UIImageView!
     
     var imageForSegue : UIImage!;
+    var lati:Double?
+    var longi:Double?
     
     //앨범에서 이미지를 가져오기 위한 함수 UIImagePickerController를 사용한다.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -29,6 +31,7 @@ class AlbumViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(lati ?? "no data",longi ?? "no data")
     }
 
     override func didReceiveMemoryWarning() {
