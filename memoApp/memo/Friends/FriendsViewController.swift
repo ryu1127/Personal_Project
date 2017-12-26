@@ -18,31 +18,6 @@ class FriendsViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    //import memo list from firebase
-    func fetchMemo(){
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        FIRDatabase.database().reference().child("data").child(uid!).observe(.childAdded, with: {(snapshot) in
-            
-            //import snapshot
-            if let dictionary = snapshot.value as? [String:Any]{
-                print("dictionary : \(dictionary)")
-                let memo = Memo()
-                memo.setValuesForKeys(dictionary)
-                self.memos.append(memo)
-                
-                let queue = DispatchQueue(label: "label2")
-                queue.async {
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-            
-        }, withCancel: nil)
-        print("successfully ending")
-    }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -93,6 +68,33 @@ class FriendsViewController: UITableViewController {
         return cell
     }
     
+    //import memo list from firebase
+    func fetchMemo(){
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        importSnapshot(uid: uid!)
+    }
+    
+    func importSnapshot(uid : String){
+        FIRDatabase.database().reference().child("data").child(uid).observe(.childAdded, with: {(snapshot) in
+            
+            //import snapshot
+            if let dictionary = snapshot.value as? [String:Any]{
+                print("dictionary : \(dictionary)")
+                let memo = Memo()
+                memo.setValuesForKeys(dictionary)
+                self.memos.append(memo)
+                
+                let queue = DispatchQueue(label: "label2")
+                queue.async {
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+            
+        }, withCancel: nil)
+        print("successfully ending")
+    }
     
     /*
      // Override to support conditional editing of the table view.
@@ -143,8 +145,8 @@ class FriendsViewController: UITableViewController {
             destination.imageTitle = memos[(self.tableView.indexPathForSelectedRow?.row)!].title!
             destination.imageUrl = memos[(self.tableView.indexPathForSelectedRow?.row)!].url!
             destination.text = memos[(self.tableView.indexPathForSelectedRow?.row)!].text!
-            destination.latitude = memos[(self.tableView.indexPathForSelectedRow?.row)!].latitude!
-            destination.longitude = memos[(self.tableView.indexPathForSelectedRow?.row)!].longitude!
+            destination.latitude = memos[(self.tableView.indexPathForSelectedRow?.row)!].latitude
+            destination.longitude = memos[(self.tableView.indexPathForSelectedRow?.row)!].longitude
 
         }
     }

@@ -19,17 +19,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBAction func logoutBtn(_ sender: Any) {
         do{
             try FIRAuth.auth()?.signOut()
+            self.performSegue(withIdentifier: "logout", sender: self)
         }catch let logoutError{
             print(logoutError)
         }
     }
+    
+    var memos = [Memo]()
+    
     var startLocation : CLLocation!
+    
+    var myAnnotations : [MKPointAnnotation] = [MKPointAnnotation]()
+
     
     //위도 경도 확인을 위한 CLLocationManager 객체 인스턴스저장
     var locationManager = CLLocationManager()
     //위도 경도 세그로 날리기 위한 변수 지정
-    var latiTxt : String?
-    var longiTxt : String?
+    var latiTxt : Double?
+    var longiTxt : Double?
     //팝업을 띄우기위해 segue받는 변수
     var saved : Int = 0
     
@@ -37,17 +44,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var latitude: UILabel!
     @IBOutlet weak var longitude: UILabel!
 
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.fetchMemo()
+        }
+        latiTxt = locationManager.location?.coordinate.latitude
+        longiTxt = locationManager.location?.coordinate.longitude
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(memos)
         //위치 사용 허가를 위한 요청 날리기
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         //위치 사용 허락 받은 후 위치 추적 시작
         locationManager.startUpdatingLocation()
-        
         
         startLocation = nil
         memoMap.delegate = self
@@ -135,6 +149,66 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //위치 확인에 실패하면 오류 출력 
     func locationManager(manager: CLLocationManager, didFailWithError error: Error){
         print("error:\(error.localizedDescription)")
+    }
+    
+    func fetchMemo(){
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        importSnapshot(uid: uid!)
+        print("fetch over!")
+        memos = [Memo]()
+        print(memos)
+    }
+    
+    func importSnapshot(uid: String){
+        FIRDatabase.database().reference().child("data").child(uid).observe(.childAdded, with: {(snapshot) in
+            
+            //import snapshot
+            if let dictionary = snapshot.value as? [String:Any]{
+                print("dictionary : \(dictionary)")
+                let memo = Memo()
+                memo.setValuesForKeys(dictionary)
+                self.memos.append(memo)
+                print("memo append : \(self.memos)")
+                for m in self.memos {
+                    print("-----\(m)-------")
+                    let location = CLLocationCoordinate2D(latitude: (m.latitude as! NSString).doubleValue, longitude: (m.longitude as! NSString).doubleValue)
+                    print("location : \(location)")
+                    let myAnnotation : MKPointAnnotation = MKPointAnnotation()
+                    myAnnotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+                    myAnnotation.title = memo.title
+                    self.memoMap.addAnnotation(myAnnotation)
+                }
+//                let location = CLLocationCoordinate2D(latitude: self.latiTxt!, longitude: self.longiTxt!)
+//                print("location : \(location)")
+//                let myAnnotation : MKPointAnnotation = MKPointAnnotation()
+//                myAnnotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+//                myAnnotation.title = memo.title
+//                let queue = DispatchQueue(label: "label4")
+//                queue.async {
+//                    DispatchQueue.main.async {
+//                        //make marker
+//                        print("latiTxt : \(self.latiTxt!)")
+//                        print("longiTxt : \(self.longiTxt!)")
+//                        let location = CLLocationCoordinate2D(latitude: self.latiTxt!, longitude: self.longiTxt!)
+//                        print("location : \(location)")
+//                        let myAnnotation : MKPointAnnotation = MKPointAnnotation()
+//                        myAnnotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+//                        myAnnotation.title = memo.title
+//
+////                        self.myAnnotations.append(myAnnotation)
+//                        self.memoMap.addAnnotation(myAnnotation)
+//                        print("enter queue=-=-=-=-=-=-=--=-")
+//                        }
+//                }
+                for myAnnotation in self.myAnnotations {
+                    print("enter loop")
+                    self.memoMap.addAnnotation(myAnnotation)
+                }
+
+                
+            }
+            
+        }, withCancel: nil)
     }
 
     

@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class FriendsDetailViewController: UIViewController,MKMapViewDelegate, CLLocationManagerDelegate {
     
@@ -16,6 +17,8 @@ class FriendsDetailViewController: UIViewController,MKMapViewDelegate, CLLocatio
     var text : String?
     var latitude : String?
     var longitude : String?
+    var address : String?
+    
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleText: UILabel!
@@ -43,6 +46,44 @@ class FriendsDetailViewController: UIViewController,MKMapViewDelegate, CLLocatio
         }
         titleText.text = imageTitle
         textField.text = text
+        
+        let location = CLLocationCoordinate2D(latitude: (latitude as! NSString).doubleValue, longitude: (longitude as! NSString).doubleValue)
+        let locations = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        mapView.setCenter(location, animated: true)
+        
+        let span : MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+        let region : MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        
+        mapView.setRegion(region, animated: true)
+        
+        
+        let myAnnotation : MKPointAnnotation = MKPointAnnotation()
+        myAnnotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+        CLGeocoder().reverseGeocodeLocation(locations, completionHandler: {(placemarks, error) -> Void in
+            print("\(location) 1")
+            
+            if error != nil {
+                print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
+                return
+            }
+            
+            if placemarks!.count > 0 {
+                let pm = placemarks![0]
+                print("\(pm.country ?? "") \(pm.locality ?? "") \(pm.subThoroughfare ?? "") \(pm.thoroughfare ?? "") 2")
+                self.address = "\(pm.country ?? "") \(pm.locality ?? "") \(pm.thoroughfare ?? "") \(pm.subThoroughfare ?? "") "
+                print(self.address ?? "주소 탐색불가")
+                self.address = self.address ?? "주소 탐색불가"
+                myAnnotation.title = self.address
+                
+            }
+            else {
+                print("Problem with the data received from geocoder")
+            }
+        })
+            myAnnotation.title = "122"
+            mapView.addAnnotation(myAnnotation)
+        
+        
         
         
 //        let location = CLLocationCoordinate2D(latitude: (latitude! as NSString).doubleValue, longitude: (longitude! as NSString).doubleValue)

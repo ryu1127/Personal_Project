@@ -60,7 +60,7 @@ class RecordViewController: UIViewController, UIScrollViewDelegate, CLLocationMa
             if placemarks!.count > 0 {
                 let pm = placemarks![0]
                 print("\(pm.country ?? "") \(pm.locality ?? "") \(pm.subThoroughfare ?? "") \(pm.thoroughfare ?? "") 2")
-                self.address = "\(pm.country ?? "") \(pm.locality ?? "") \(pm.subThoroughfare ?? "") \(pm.thoroughfare ?? "") "
+                self.address = "\(pm.country ?? "") \(pm.locality ?? "") \(pm.thoroughfare ?? "") \(pm.subThoroughfare ?? "") "
                 print(self.address ?? "주소 탐색불가")
                 self.latitude.text = self.address ?? "주소 탐색불가"
             }

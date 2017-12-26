@@ -14,8 +14,8 @@ import MapKit
 class WriteViewController: UIViewController, UITextViewDelegate{
     var imageForSegue : UIImage?
     var saved : Int?
-    var longitude : String!
-    var latitude : String!
+    var longitude : CLLocationDegrees!
+    var latitude : CLLocationDegrees!
     var imageUrl : String?
     
     let ref = FIRDatabase.database().reference(fromURL: "https://keep-c4c6e.firebaseio.com/")
@@ -94,9 +94,15 @@ class WriteViewController: UIViewController, UITextViewDelegate{
             
             
             startLocation = nil
-            
             latitude = locationManager.location?.coordinate.latitude
             longitude = locationManager.location?.coordinate.longitude
+            let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            print("location : \(location)")
+            let myAnnotation : MKPointAnnotation = MKPointAnnotation()
+            myAnnotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+            myAnnotation.title = title
+            
+//            self.memoMap.addAnnotation(myAnnotation)
 
             print(latitude, longitude)
             
@@ -109,7 +115,7 @@ class WriteViewController: UIViewController, UITextViewDelegate{
             dataFormatter.dateFormat = "yyyy-MM-dd HH:mm"
             dataFormatter.locale = Locale(identifier: "ko_KR")
             let time = dataFormatter.string(from: now as Date)
-            let values = ["title":title,"text":text ,"longitude":longitude as! String ?? "37.0","latitude":latitude as! String ?? "126.0","time":time ,"url":imageUrl ?? "default"] as [String : Any]
+            let values = ["title":title,"text":text ,"longitude":String(longitude) ?? "37.0","latitude":String(latitude) ?? "126.0","time":time ,"url":imageUrl ?? "default"] as [String : Any]
             userRef.child("\(imageName)").updateChildValues(values, withCompletionBlock: {(err,ref) in
                 if err != nil {
                     print(err)
