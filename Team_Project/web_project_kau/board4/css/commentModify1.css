@@ -1,0 +1,73 @@
+body { background: #fff; }
+
+label {
+    display:block;
+    padding-bottom:5px;
+    margin-top:20px;
+}
+
+.blueone {
+  border-collapse: collapse;
+  width:60%;
+  margin: auto;
+  position:absolute;
+  top:20%;
+  left:20%;
+}
+.blueone th {
+  padding: 10px;
+  color: #08f;
+  border-bottom: 2px solid #08f;
+  text-align: left;
+}
+.blueone td {
+  color: #08f;
+  padding: 10px;
+  border-bottom: 1px solid #08f;
+}
+.blueone tr:hover td {
+  color: #08f;
+}
+
+#title{
+    background:transparent top right ;
+    height:13px;
+    padding-top:5px;
+    width:600px;
+    overflow:hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#comment{
+    background:transparent top right ;
+    height:110px;
+    padding-top:5px;
+    width:635px;
+    overflow:hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+a:link { color: #08f; text-decoration: none;}
+a:visited { color: #08f; text-decoration: none;}
+a:hover { color: #08f; text-decoration: underline;}
+
+.modify{
+  color: #08f;
+  background: oldlace;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 10px/100% Arial, Helvetica, sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px rgba(0, 136, 255, 0.5);
+  -webkit-border-radius: .1em;
+  -moz-border-radius: .1em;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 136, 255, 0.5);
+  -moz-box-shadow: 0 1px 2px rgba(0, 136, 255, 0.5);
+  box-shadow: 0 1px 2px rgba(0, 136, 255, 0.5);
+}

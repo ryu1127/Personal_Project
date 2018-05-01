@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.ryu.welt_record_23">
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.HEADSET_PLUG"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:priority="10000000">
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+
+        </activity>
+        <!--<receiver android:name=".MainActivity$EarphoneButtonReceiver"-->
+            <!--android:enabled="true"-->
+            <!--android:exported="true">-->
+            <!--<intent-filter android:priority="1010100100">-->
+                <!--<action android:name="android.intent.action.MEDIA_BUTTON"/>-->
+                <!--&lt;!&ndash;<action android:name="android.intent.action.HEADSET_PLUG"/>&ndash;&gt;-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+
+    </application>
+
+
+</manifest>

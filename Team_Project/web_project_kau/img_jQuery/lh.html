@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+<html lang="ko"> 
+    <head> 
+        <script type="text/javascript" src="./jquery-1.10.1.min.js">
+
+        </script>
+       <script type="text/javascript">
+       var s=2;
+        $(function(){
+            $("#next").click(function()
+            {
+                if (s==4)
+                    s=1;
+                console.log(s);
+            $("#ajax").html("<img src=room1_"+s+".jpg></img>");
+                s=s+1;
+            });
+
+            $("#prev").click(function()
+            {
+                if (s==0)
+                    s=3;
+                console.log(s);
+            $("#ajax").html("<img src=room1_"+s+".jpg></img>");
+                s=s-1;
+            });
+        });
+        </script>
+
+
+        <meta charset="utf-8"/> 
+        <title>
+    
+        </title>
+        <style type="text/css">
+        #ajax
+        {
+            width:100px;
+            height:100px;
+
+            position: fixed;
+            top : 300px;
+            left : 500px;
+
+        }
+
+        #next
+        {
+            width:100px;
+            height:100px;
+            position: fixed;
+            top : 300px;
+            left : 800px;
+
+        }
+
+        #prev
+        {
+            width:100px;
+            height:100px;
+            position: fixed;
+            top : 300px;
+            left : 350px;
+
+        }
+        </style>
+    </head> 
+        
+    <body>
+
+        
+        <div id="ajax"> 
+            
+        <img src="room1_1.jpg">
+
+        </div>
+        <div id="next"> 
+
+        <left>
+                <button id='next' name="next"> next </button> 
+        </left>
+        </div>
+
+        <div id="prev"> 
+
+        <left>
+                <button id='prev' name="next"> prev </button> 
+        </left>
+        </div>
+
+    </body> 
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FIND MY HOME</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="Bucky Maler">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+ <script>
+ function initialize() {
+
+ /*
+ http://openapi.map.naver.com/api/geocode.php?key=f32441ebcd3cc9de474f8081df1e54e3&encoding=euc-kr&coord=LatLng&query=서울특별시 노원구 섬밭로 258
+ 위의 링크에서 뒤에 주소를 적으면 x,y 값을 구할수 있습니다.
+ */
+ var Y_point = 37.6388235; // Y 좌표
+ var X_point = 127.0647555; // X 좌표
+ var zoomLevel = 17; // 첫 로딩시 보일 지도의 확대 레벨
+ var markerTitle = "한국 항공대학교 기숙사"; // 현재 위치 마커에 마우스를 올렸을때 나타나는 이름
+ var markerMaxWidth = 300; // 마커를 클릭했을때 나타나는 말풍선의 최대 크기
+
+ // 말풍선 내용
+ var contentString = '<div id="content">' +
+ '<div id="siteNotice">' +
+ '</div>' +
+ '<h3 id="firstHeading" class="firstHeading">한국 항공대학교 기숙사</h3>' +
+ '<div id="bodyContent">' +
+ '<p>항공대 학생들 위해 만들어진 최고의 숙박시설!<br />' +
+ '서울 노원구 섬밭로 258 건영백화점 4층</p>' +
+ '</div>' +
+ '</div>';
+
+ var myLatlng = new google.maps.LatLng(Y_point, X_point);
+ var mapOptions = {
+ zoom: zoomLevel,
+ center: myLatlng,
+ mapTypeId: google.maps.MapTypeId.ROADMAP
+ }
+ var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
+
+ var marker = new google.maps.Marker({
+ position: myLatlng,
+ map: map,
+ title: markerTitle
+ });
+
+ var infowindow = new google.maps.InfoWindow(
+ {
+ content: contentString,
+ maxWidth: markerMaxWidth
+ }
+ );
+
+ google.maps.event.addListener(marker, 'click', function() {
+ infowindow.open(map, marker);
+ });
+ }
+ </script>
+</head>
+<body onload="initialize()">
+
+<!-- notification for small viewports and landscape oriented smartphones -->
+
+
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="#0">
+            <img src="assets/img/ui_2_01.jpg" alt="Global">
+            <p>You can find your hometown!</p>
+
+          </a>
+          <div class="header--nav-toggle">
+            <img src="assets/img/map.jpg" alt="Global">
+          </div>
+        </header>
+        <div class = "high-header">HOME Of The Student, By The Student, For The Student</div>
+        <div class = "main-bar"></div>
+        <div class = "main-bar1"></div>
+        <div class = "main-bottombar"></div>
+        <nav class="l-side-nav">
+
+          <ul class="side-nav">
+
+            <li class="is-active"><span>HOME</span></li>
+            <li><span>자취/하숙<span></li>
+            <li><span>같이 지내요</span></li>
+            <li><span>방 있어요</span></li>
+            <li><span>여기 어때요</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <h1>당신을 위한 보금자리를 찾아라!</h1>
+                  <img src="assets/img/22.jpeg" alt="Welcome">
+              </div>
+            </div>
+          <li class="l-section section">
+            <div class="work">
+              <h2>자취/하숙</h2>
+              <iframe src="https://www.zigbang.com/search/map?lat=37.54906&lng=126.9705&zoom=8&GGKW=google " width="1000" height="400" marginwidth="0" marginheight="0" scrolling=  "yes"></iframe>
+            </div>
+
+          </li>
+          <li class="l-section section">
+            <div class="about">
+              <h2>같이 지내요</h2>
+              <iframe src="board2/board.php" width="1000" height="400" marginwidth="0" marginheight="0" scrolling=  "yes"></iframe>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="contact">
+              <h2>방 있어요</h2>
+              <iframe src="board3/board.php" width="1000" height="400" marginwidth="0" marginheight="0" scrolling=  "yes"></iframe>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="hire">
+              <h2>여기 어때요</h2>
+              <iframe src="board4/board.php" width="1000" height="400" marginwidth="0" marginheight="0" scrolling=  "yes"></iframe>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <ul class="outer-nav">
+    <div id="map_view" style="width:500px; height:300px;"></div>
+  </ul>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
+</body>
+</html>

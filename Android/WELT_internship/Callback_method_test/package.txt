@@ -1,0 +1,4 @@
+Callback method에 관해서 코드를 모아두었고
+
+또한 처음 성공한 Earphone Button Receiver도 구현되어있다.
+
