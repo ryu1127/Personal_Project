@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <form method="POST"> {% csrf_token %}
+        {{ form.as_p }}
+    	<button type="submit">insert or update</button>
+    </form>
+
+    <form action="/sel" method="GET">
+        <button type="submit">sel</button>
+    </form>
+    <form action="/init" method="GET">
+        <button type="submit">init</button>
+    </form>
+</body>
+</html>

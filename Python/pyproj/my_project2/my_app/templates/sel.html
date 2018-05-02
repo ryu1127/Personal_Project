@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select</title>
+</head>
+<body>
+    {% for cur in res %}
+    <p>
+        {{cur.std_num}},
+        {{cur.name}},
+        {{cur.major}},
+    </p>
+    {% endfor %}
+
+    <form action="/" method="GET">
+        <button type="submit">Back</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,14 @@
+int main() {
+   float a;
+   char c;
+   bool b;
+   b=false;
+   c='$';
+   a=-0.15;
+   while (b != true) {
+     if (c == '$') {
+       a = a +0.1;
+     }
+   }
+   b=true;
+} // main
