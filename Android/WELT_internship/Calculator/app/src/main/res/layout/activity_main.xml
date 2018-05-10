@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.ryu.calculator.MainActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/number1"
+        android:layout_alignParentEnd="true"
+        android:hint="first number" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/number1"
+        android:layout_alignParentStart="true"
+        android:id="@+id/number2"
+        android:layout_alignParentEnd="true"
+        android:hint="second number" />
+
+    <Button
+        android:text="+"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/number2"
+        android:layout_alignParentStart="true"
+        android:id="@+id/addButton"
+        android:onClick="addClick"/>
+    <!--함수연결하는거-->
+
+    <Button
+        android:text="-"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/number2"
+        android:layout_toEndOf="@+id/addButton"
+        android:id="@+id/subtractButton"
+        android:onClick="subtractClick"/>
+
+    <Button
+        android:text="*"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/subtractButton"
+        android:layout_toEndOf="@+id/subtractButton"
+        android:id="@+id/multiplyButton"
+        android:onClick="multiplyClick"/>
+
+    <Button
+        android:text="/"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/number2"
+        android:layout_toEndOf="@+id/multiplyButton"
+        android:id="@+id/divideButton"
+        android:onClick="divideClick"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/addButton"
+        android:layout_alignParentStart="true"
+        android:id="@+id/result"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:hint="result" />
+</RelativeLayout>
